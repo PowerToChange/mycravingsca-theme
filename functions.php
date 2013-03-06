@@ -21,6 +21,8 @@
  * @subpackage Twenty_Twelve
  * @since Twenty Twelve 1.0
  */
+ 
+include_once('functions_mycravings.php');
 
 /**
  * Sets up the content width value based on the theme's design and stylesheet.
@@ -73,6 +75,7 @@ function twentytwelve_setup() {
 
 	// This theme uses a custom image size for featured images, displayed on "standard" posts.
 	add_theme_support( 'post-thumbnails' );
+	add_image_size('mycravings_thumb', 80, 60, true);
 	set_post_thumbnail_size( 624, 9999 ); // Unlimited height, soft crop
 }
 add_action( 'after_setup_theme', 'twentytwelve_setup' );

@@ -159,6 +159,15 @@ img {
 	-ms-interpolation-mode: bicubic;
 }
 
+h2 {
+	border-bottom: 1px solid #D4DFE7;
+	color: #666666;
+	font-size: 18px;
+	font-weight: bold;
+	margin: 3px 0 10px 0;
+	text-shadow: 0 0 1px #999999;
+}
+
 .box {
 	background: #FFFFFF;
 	border: 1px solid #DDDDDD;
@@ -167,6 +176,10 @@ img {
 	box-shadow: 0 0 1px #999999;
 	margin-bottom: 15px;
 }
+
+.left { float: left; }
+.right { float: right; }
+.half { width: 46% }
 
 /* Clearing floats */
 .clear:after,
@@ -461,27 +474,25 @@ img.wp-smiley,
 }
 .author-info {
 	border-top: 1px solid #ededed;
-	margin: 24px 0;
-	margin: 1.714285714rem 0;
-	padding-top: 24px;
-	padding-top: 1.714285714rem;
 	overflow: hidden;
 }
 .author-description p {
-	color: #757575;
-	font-size: 13px;
-	font-size: 0.928571429rem;
-	line-height: 1.846153846;
+	color: #222222;
+	font-size: 12px;
+	line-height: 1.5;
 }
 .author.archive .author-info {
 	border-top: 0;
-	margin: 0 0 48px;
-	margin: 0 0 3.428571429rem;
 }
 .author.archive .author-avatar {
 	margin-top: 0;
 }
-
+.entry_author_image img {
+	max-width: 100%;
+}
+.entry_author_image {
+	width:20%;
+}
 
 /* =Basic structure
 -------------------------------------------------------------- */
@@ -491,18 +502,17 @@ html {
 	font-size: 87.5%;
 }
 body {
-	font-size: 14px;
-	font-size: 1rem;
+	font-size: 12px;
 	font-family: "Helvetica Neue", Arial, Helvetica, Arial, sans-serif;
 	text-rendering: optimizeLegibility;
-	color: #444;
+	color: #222;
 }
 body.custom-font-enabled {
 	font-family: "Helvetica Neue", Arial, Helvetica, Arial, sans-serif;
 }
 a {
-	outline: none;
-	color: #21759b;
+	text-decoration: none;
+	color: #D79B2B;
 }
 a:hover {
 	color: #0f3647;
@@ -728,20 +738,10 @@ footer[role="contentinfo"] a:hover {
 	font-size: 13px;
 	font-size: 0.928571429rem;
 	line-height: 1.846153846;
-	color: #757575;
-}
-.comments-link a,
-.entry-meta a {
-	color: #757575;
-}
-.comments-link a:hover,
-.entry-meta a:hover {
-	color: #21759b;
 }
 article.sticky .featured-post {
 	border-top: 4px double #ededed;
 	border-bottom: 4px double #ededed;
-	color: #757575;
 	font-size: 13px;
 	font-size: 0.928571429rem;
 	line-height: 3.692307692;
@@ -752,7 +752,7 @@ article.sticky .featured-post {
 .entry-content,
 .entry-summary,
 .mu_register {
-	line-height: 1.714285714;
+	line-height: 1.5;
 }
 .entry-content h1,
 .comment-content h1,
@@ -813,7 +813,7 @@ article.sticky .featured-post {
 .mu_register p {
 	margin: 0 0 24px;
 	margin: 0 0 1.714285714rem;
-	line-height: 1.714285714;
+	line-height: 1.5;
 }
 .entry-content ol,
 .comment-content ol,
@@ -975,11 +975,9 @@ img.aligncenter {
 }
 footer.entry-meta {
 	margin-top: 24px;
-	margin-top: 1.714285714rem;
-	font-size: 13px;
-	font-size: 0.928571429rem;
+	font-size: 12px;
 	line-height: 1.846153846;
-	color: #757575;
+	color: #222222;
 }
 .single-author .entry-meta .by-author {
 	display: none;
@@ -1417,6 +1415,20 @@ a.comment-edit-link:hover {
 	text-align: right;
 }
 
+/*
+ * Front page
+ */
+
+.front_article { position: relative; }
+.front_article a {}
+.front_article img { width: 100%; }
+.front_article_title_black_box { background: black; opacity: 0.8; position: absolute; bottom: 0; left: 0; height: 56px; width: 100% }
+.front_article_title { color: white; font-size: 24pt; line-height: 56px; position: absolute; bottom: 0; left: 0; margin-left: 10px;  }
+
+.featured-articles li { height: 60px; margin: 0 0 10px 0; width: 100%; }
+.featured-articles li img { float: left; margin: 0 10px 0 0; }
+.fa-title {display: block; margin-bottom: 3px; }
+
 
 /* =Plugins
 ----------------------------------------------- */
@@ -1440,7 +1452,7 @@ img#wpstats {
 	}
 	.author-description {
 		float: right;
-		width: 80%;
+		width: 75%;
 	}
 	.site {
 		margin: 0 auto;
@@ -1545,9 +1557,12 @@ img#wpstats {
 	.menu-toggle {
 		display: none;
 	}
-	.entry-header .entry-title {
-		font-size: 22px;
-		font-size: 1.571428571rem;
+	.entry-header .entry-title, h1 {
+		font-size: 20px;
+		font-weight: bold;
+		height: 31px;
+		color: #D79B2B;
+		text-shadow: 0 0 1px #666666;
 	}
 	#respond form input[type="text"] {
 		width: 46.333333333%;

@@ -11,11 +11,11 @@
  * @since Twenty Twelve 1.0
  */
 
+
 get_header(); ?>
 
 	<section id="primary" class="site-content">
 		<div id="content" role="main">
-
 		<?php if ( have_posts() ) : ?>
 
 			<?php
@@ -27,10 +27,6 @@ get_header(); ?>
 				 */
 				the_post();
 			?>
-
-			<header class="archive-header">
-				<h1 class="archive-title"><?php printf( __( 'Author Archives: %s', 'twentytwelve' ), '<span class="vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( "ID" ) ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>' ); ?></h1>
-			</header><!-- .archive-header -->
 
 			<?php
 				/* Since we called the_post() above, we need to
@@ -45,14 +41,12 @@ get_header(); ?>
 			<?php
 			// If a user has filled out their description, show a bio on their entries.
 			if ( get_the_author_meta( 'description' ) ) : ?>
-			<div class="author-info">
-				<div class="author-avatar">
-					<?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'twentytwelve_author_bio_avatar_size', 60 ) ); ?>
-				</div><!-- .author-avatar -->
+			<div class="author-info box">
 				<div class="author-description">
-					<h2><?php printf( __( 'About %s', 'twentytwelve' ), get_the_author() ); ?></h2>
+					<h1><?php printf( __( 'About %s', 'twentytwelve' ), get_the_author() ); ?></h1>
 					<p><?php the_author_meta( 'description' ); ?></p>
 				</div><!-- .author-description	-->
+					<?php the_author_image(); ?>
 			</div><!-- .author-info -->
 			<?php endif; ?>
 
