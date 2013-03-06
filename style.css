@@ -1430,6 +1430,11 @@ a.comment-edit-link:hover {
 .fa-title {display: block; margin-bottom: 3px; }
 
 
+.article_preview{ margin: 5px 10px; width: 90px; height: 120px; float: left; }
+.article_preview img { width: 80px; height: 60px; float: left; margin: 5px; }
+.moreArticlesLink { position: absolute; bottom: 5px; right: 5px; cursor: pointer; }
+.relative { position: relative; }
+
 /* =Plugins
 ----------------------------------------------- */
 
@@ -1442,6 +1447,23 @@ img#wpstats {
 
 /* =Media queries
 -------------------------------------------------------------- */
+
+.laptop { display: none; }
+.tablet-laptop { display: none; }
+.tablet { display: none; }
+.mobile-tablet { display: block; }
+.mobile { display: block; }
+
+
+/* tablet */
+@media screen and (min-width: 400px) {
+	.laptop { display: none; }
+	.tablet-laptop { display: block; }
+	.tablet { display: block; }
+	.mobile-tablet { display: block; }
+	.mobile { display: none; }
+}
+
 
 /* Minimum width of 600 pixels. */
 @media screen and (min-width: 600px) {
@@ -1609,6 +1631,19 @@ img#wpstats {
 		margin-left: 48px;
 		margin-left: 3.428571429rem;
 	}
+	
+
+
+}
+
+/* laptop */
+@media screen and (min-width: 830px) {
+	
+	.laptop { display: block; }
+	.tablet-laptop { display: block; }
+	.tablet { display: none; }
+	.mobile-tablet { display: none; }
+	.mobile { display: none; }
 }
 
 /* Minimum width of 950 pixels. */
@@ -1632,6 +1667,8 @@ img#wpstats {
 		margin-bottom: 0;
 		box-shadow: none;
 	}
+
+
 }
 
 

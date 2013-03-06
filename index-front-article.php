@@ -1,9 +1,18 @@
 <?php
-		$url = $front->url;
-		$title = $front->post_title;
-		
-		$id = url_to_postid($url);
-		$img = get_the_post_thumbnail($id, 'full');
+
+if(array_key_exists('front', $front_page))
+{
+	global $post;
+	$save_post = $post;
+
+	$id = $front_page['front']['id'];
+	$post = get_post($id);
+	$url = $front_page['front']['url'];
+	$title = $post->post_title;
+	
+	$img = get_the_post_thumbnail($id, 'mycravings_full');
+	
+	$post = $save_post;
 ?>
 
 <div class="box">
@@ -15,3 +24,6 @@
 		</div>
 	</a>
 </div><!-- .box -->
+<?php
+}
+?>

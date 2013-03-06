@@ -1,14 +1,17 @@
 <?php
 if($front_page) 
-	if(array_key_exists($box_key, $front_page))
-		if(count($front_page[$box_key]))
+	if(array_key_exists('featured', $front_page))
+		if(count($front_page['featured']))
 		{
+			if(count($front_page['recent']))
+				$fas = array_merge($front_page['featured'], $front_page['recent']);
+			else
+				$fas = $front_page['featured'];
 ?>
-<div class="box half <?php echo $box_placement; ?> laptop">
-<h2><?php echo $box_title; ?></h2>
+<div class="box tablet">
 <ul class="featured-articles">
 <?php
-if(array_key_exists($box_key, $front_page)) foreach ($front_page[$box_key] as $fa) {
+if($fas) foreach ($fas as $fa) {
 	?>
 	<li>
 		<a href="<?php echo $fa['url']; ?>"><? echo get_the_post_thumbnail($fa['id'], 'mycravings_thumb'); ?></a>

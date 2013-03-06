@@ -3,63 +3,136 @@ define('MAX_TITLE_SIZE', 30);
 define('FEATURED_EXCERPT_SIZE', 55);
 
 
-function show_featured()
-{
-	$items = wp_get_nav_menu_items('Featured');
-	$fa_urls = array();
-	$printed_ids = array();
 
-	// print the front article if any	
+function show_front_page()
+{
+	$front_page = collect_articles_placement();
+	
+	require('index-front-article.php');
+	
+	$box_title = 'Featured Articles';
+	$box_placement = 'left';
+	$box_key = 'featured';
+	require('index-featured-box.php');
+	
+	$box_title = 'Recent Articles';
+	$box_placement = 'right';
+	$box_key = 'recent';
+	require('index-featured-box.php');
+
+	echo "<div class=\"clear\"></div>";
+	
+	require('index-featured-mobile.php');
+
+	require('index-other-articles.php');
+}
+
+
+function &collect_articles_placement()
+{
+	$front_page = array('printed_ids' => array());
+
+	$items = wp_get_nav_menu_items('Featured');
+	
+	collect_front($items, $front_page);
+	collect_featured($items, $front_page);
+	collect_recent_and_others($front_page);
+
+	return $front_page;
+}
+
+function collect_front(&$items, &$front_page)
+{
 	if(count($items))
 	{
 		$front = array_shift($items);
-		$printed_ids[url_to_postid($front->url)] = true;
-		require('index-front-article.php');
-	}
+		$id = url_to_postid($front->url);
+		if($id)
+		{
+			// we have a post with that url, make it front page
+			$front_page['printed_ids'][$id] = true;
+			$front_page['front'] = array('id' => $id, 'url' => $front->url);
+		}
+		else {
+			// url was invalid, maybe next url is.
+			collect_front($items, $front_page);
+		}
+	}	
+}
 
-	// array_shift removed the first item, are there any left?
+function collect_featured(&$items, &$front_page)
+{
+	global $post;
+	$save_post = $post;
+
+	$front_page['featured'] = array();
+	
 	if(count($items))
 	{
 		foreach ($items as $fa)
 		{
-			array_push($fa_urls, $fa->url);
-			$printed_ids[url_to_postid($fa->url)] = true;
+			$id = url_to_postid($fa->url);
+			if($id)
+			{
+				// we have a post with that url, add it to featured articles
+				// get that post
+				$post = get_post($id);
+				$excerpt = CropSentence(strip_tags($post->post_content), FEATURED_EXCERPT_SIZE);
+				$title = CropSentence($post->post_title, MAX_TITLE_SIZE);
+				
+				//id, url, title, excerpt
+				$front_page['printed_ids'][$id] = true;
+				array_push($front_page['featured'], array('id' => $id, 'url' => $fa->url, 
+														'title' => $title, 'excerpt' => $excerpt));
+			}
 		}
-		$box_title = 'Featured Articles';
-		$box_placement = 'left';
-		require('index-featured-box.php');
+	}
+	
+	$post = $save_post;
+}
 
-		//reset that array
-		$fa_urls = array();
-		$nb_posts_needed = (count($items) * 2) + 1;
-		
-		$query = new WP_Query( 'posts_per_page=' . $nb_posts_needed );
+function collect_recent_and_others(&$front_page)
+{
+		$query = new WP_Query( 'posts_per_page=-1' );
+		$nb_featured = count($front_page['featured']);
+		$nb_recent = 0;
+
+		$front_page['recent'] = array();
+		$front_page['others'] = array();
+
 	
 		// The Loop
 		while ( $query->have_posts() ) :
 			$query->the_post();
 			$id = get_the_ID();
-			if(!array_key_exists($id, $printed_ids) 
-				&& count($printed_ids) < $nb_posts_needed)
+			if(!array_key_exists($id, $front_page['printed_ids']))
 			{
-				array_push($fa_urls, get_permalink());
-				$printed_ids[$id] = true;
+				$title = CropSentence(get_the_title(), MAX_TITLE_SIZE);
+
+				$nb_recent++;
+				if($nb_recent <= $nb_featured)
+				{
+					// make it part of recent
+
+					// only needed in recent box
+					$excerpt = CropSentence(strip_tags(get_the_content()), FEATURED_EXCERPT_SIZE);
+					
+					array_push($front_page['recent'], array('id' => $id, 'url' => get_permalink(), 
+														'title' => $title, 'excerpt' => $excerpt));
+				}
+				else
+				{
+					// make it part of others
+					array_push($front_page['others'], array('id' => $id, 'url' => get_permalink(),
+															'title' => $title));
+				}
 			}
 		endwhile;
 		
 		wp_reset_postdata();
-		
-		$box_title = 'Recent Articles';
-		$box_placement = 'right';
-		require('index-featured-box.php');
-
-
-	}
-	
-
-
-	
 }
+
+
 
 
 /*################################################################
