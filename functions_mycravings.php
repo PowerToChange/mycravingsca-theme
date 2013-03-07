@@ -22,6 +22,7 @@ function show_front_page()
 
 	echo "<div class=\"clear\"></div>";
 	
+	require('index-featured-tablet.php');
 	require('index-featured-mobile.php');
 
 	require('index-other-articles.php');
