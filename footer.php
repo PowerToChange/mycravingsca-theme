@@ -17,7 +17,7 @@
 <div id="footer_wrapper" class="site">
 		<footer id="colophon" role="contentinfo">
 			<div class="site-info">
-				<?php do_action( 'twentytwelve_credits' ); ?>
+				<a class="footerLogo" href="http://p2c.com/students"></a>
 				<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'twentytwelve' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'twentytwelve' ); ?>"><?php printf( __( 'Proudly powered by %s', 'twentytwelve' ), 'WordPress' ); ?></a>
 			</div><!-- .site-info -->
 		</footer><!-- #colophon -->

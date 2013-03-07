@@ -687,13 +687,10 @@ section[role="banner"] {
 footer[role="contentinfo"] {
 	clear: both;
 	font-size: 12px;
-	font-size: 0.857142857rem;
 	line-height: 2;
 	max-width: 950px;
 	margin-left: auto;
 	margin-right: auto;
-	padding: 24px 0;
-	padding: 1.714285714rem 0;
 	background-color: #000000;
 }
 footer[role="contentinfo"] a {
@@ -702,7 +699,12 @@ footer[role="contentinfo"] a {
 footer[role="contentinfo"] a:hover {
 	color: #21759b;
 }
-
+.footerLogo {
+	background: url("images/footerLogo.png");
+	float: left;
+	height: 90px;
+	width: 230px;
+}
 
 /* =Main content and comment content
 -------------------------------------------------------------- */
@@ -1320,47 +1322,6 @@ a.comment-edit-link:hover {
 }
 .required {
 	color: red;
-}
-
-
-/* =Front page template
--------------------------------------------------------------- */
-
-.entry-page-image {
-	margin-bottom: 14px;
-	margin-bottom: 1rem;
-}
-.template-front-page .site-content article {
-	border: 0;
-	margin-bottom: 0;
-}
-.template-front-page .widget-area {
-	clear: both;
-	float: none;
-	width: auto;
-	padding-top: 24px;
-	padding-top: 1.714285714rem;
-	border-top: 1px solid #ededed;
-}
-.template-front-page .widget-area .widget li {
-	margin: 8px 0 0;
-	margin: 0.571428571rem 0 0;
-	font-size: 13px;
-	font-size: 0.928571429rem;
-	line-height: 1.714285714;
-	list-style-type: square;
-	list-style-position: inside;
-}
-.template-front-page .widget-area .widget li a {
-	color: #757575;
-}
-.template-front-page .widget-area .widget li a:hover {
-	color: #21759b;
-}
-.template-front-page .widget-area .widget_text img {
-	float: left;
-	margin: 8px 24px 8px 0;
-	margin: 0.571428571rem 1.714285714rem 0.571428571rem 0;
 }
 
 
