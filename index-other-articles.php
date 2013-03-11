@@ -21,7 +21,7 @@ if($front_page) if(count($front_page['others']))
 			</div>
 		<?php
 		
-		if($nb_articles % 1 == 0)
+		if($nb_articles % 6 == 0)
 		{
 			$row_number++;
 			$show_row_number = $row_number;			
