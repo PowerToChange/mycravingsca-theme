@@ -1,15 +1,17 @@
-<script src="<?php bloginfo('template_url') ?>/js/jquery.mousewheel.min.js"></script>
-<script src="<?php bloginfo('template_url') ?>/js/jquery.browser.min.js"></script>
-<script src="<?php bloginfo('template_url') ?>/js/jquery.dragscroll.min.js"></script>
+<script src="<?php bloginfo('template_url') ?>/js/jquery.scrollsync.js"></script>
 <script>
-		$(document).ready(function(){
-			$('#ts_wrapper').dragscroll(
-			{
-				scrollClassName: 'example-1',
-				scrollBars: true,
-				smoothness: 15,
-				mouseWheelVelocity: 2,
-			});
-		});
-	
+  $(function() {
+    
+    // Set header viewport to follow viewport scroll on x axis
+    $('#viewport, #header_viewport').
+        scrollsync({targetSelector: '#viewport', axis : 'x',mouseMoveHandler:function(){
+    console.log("H");
+    }});
+    
+    // Set drag scroll on first descendant of class dragger on both selected elements
+    $('#viewport, #ts_wrapper').
+        dragscrollable({dragSelector: '.dragger:first', preventDefault: true});
+     
+  });
+
 </script>
