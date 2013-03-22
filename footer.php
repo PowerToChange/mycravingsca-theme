@@ -24,5 +24,12 @@
 	</div><!-- #footer_wrapper -->
 </div><!-- #large_footer -->
 <?php wp_footer(); ?>
+<script src="<?php bloginfo('template_url') ?>/js/fitvids.js"></script>
+  <script>
+    $(document).ready(function(){
+      // Target your .container, .wrapper, .post, etc.
+      $("#page_wrapper").fitVids();
+    });
+  </script>
 </body>
 </html>

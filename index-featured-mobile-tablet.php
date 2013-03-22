@@ -8,14 +8,16 @@ if($front_page)
 			else
 				$fas = $front_page['featured'];
 ?>
-<div class="box mobile">
+<div id="ts_wrapper" class="box mobile-tablet">
+	<div id="thumbslide">
 <?php
 if($fas) foreach ($fas as $fa) {
-	?>
-		<a href="<?php echo $fa['url']; ?>"><? echo get_the_post_thumbnail($fa['id'], 'mycravings_thumb'); ?></a>
-	<?php
+	?><a href="<?php echo $fa['url']; ?>"><? 
+	echo get_the_post_thumbnail($fa['id'], 'mycravings_mobilethumb'); 
+	?></a><?php
 }
 ?>
+	</div>
 </div>
 <?php
 		}

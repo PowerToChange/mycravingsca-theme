@@ -1,7 +1,10 @@
 <?php
+
+include_once('php/video.php');
+
 define('MAX_TITLE_SIZE', 30);
 define('FEATURED_EXCERPT_SIZE', 55);
-
+define('MOBILETHUMB_WIDTH', 180);
 
 
 function show_front_page()
@@ -22,8 +25,8 @@ function show_front_page()
 
 	echo "<div class=\"clear\"></div>";
 	
-	require('index-featured-tablet.php');
-	require('index-featured-mobile.php');
+	require('articles_slide.js.php');
+	require('index-featured-mobile-tablet.php');
 
 	require('index-other-articles.php');
 }
