@@ -10,15 +10,11 @@ if($front_page)
 ?>
 <div id="ts_wrapper" class="box mobile-tablet">
 	<div id="thumbslide">
-		<div class="dragger">
 <?php
 if($fas) foreach ($fas as $fa) {
-	?><a href="<?php echo $fa['url']; ?>"><? 
 	echo get_the_post_thumbnail($fa['id'], 'mycravings_mobilethumb'); 
-	?></a><?php
 }
 ?>
-		</div>
 	</div>
 </div>
 <?php
