@@ -5,7 +5,7 @@
 	margin-top:20px;
 	margin-bottom:20px;
 	max-width:768px;
-	height:300px;
+	height:100px;
 	
 	padding: 10px;
 	background-color: #EEE;
@@ -21,14 +21,12 @@
 
 </style>
 <script id='code_1'>
-
-//testing
 				$(function() {			
 					//Enable swiping...
-					$("#test").swipe( {
+					$("#thumbslide").swipe( {
 						//Generic swipe handler for all directions
-						swipe:function(event, direction, distance, duration, fingerCount) {
-							$(this).text("You swiped " + direction );	
+						swipeStatus:function(event, phase, direction, distance) {
+							$("#test").text("You swiped " + direction );	
 						},
 						//Default is 75px, set to 0 for demo so any distance triggers swipe
 					   threshold:0
