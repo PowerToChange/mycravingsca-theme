@@ -21,6 +21,8 @@
 
 </style>
 <script id='code_1'>
+
+//testing
 				$(function() {			
 					//Enable swiping...
 					$("#test").swipe( {
