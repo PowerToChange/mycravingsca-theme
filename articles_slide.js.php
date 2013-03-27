@@ -28,6 +28,7 @@
 						swipeStatus:function(event, phase, direction, distance) {
 							$("#test").text("You swiped " + direction );	
 						},
+						allowPageScroll:"vertical",
 						//Default is 75px, set to 0 for demo so any distance triggers swipe
 					   threshold:0
 					});
