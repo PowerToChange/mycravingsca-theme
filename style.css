@@ -534,7 +534,6 @@ a:hover {
 	padding: 0;
 }
 #head_wrapper {padding: 0;}
-#page_wrapper { background: #ECECEC url(images/door.jpg) no-repeat scroll right bottom; }
 #footer_wrapper {padding: 0;}
 #large_footer { background: #000000; }
 
@@ -544,24 +543,6 @@ a:hover {
 .widget-area {
 	margin: 15px 0 0;
 }
-
-/* Header */
-.site-header {
-	background: url(images/header.jpg) no-repeat;
-	min-height: 164px;
-}
-
-.logo {
-	float: left;
-	height: 90px;
-	width: 230px;
-	margin: 24px 0 0 9px;
-}
-
-.logo:hover {
-	background: url(images/logo.jpg) repeat scroll 0 0 transparent;
-}
-
 
 /* Navigation Menu */
 .main-navigation {
@@ -1441,19 +1422,26 @@ img#wpstats {
 	margin: 0 auto 1.714285714rem;
 }
 
-
 /* =Media queries
 -------------------------------------------------------------- */
 
-.laptop { display: none; }
-.tablet-laptop { display: none; }
-.tablet { display: none; }
-.mobile-tablet { display: block; }
-.mobile { display: block; }
+/* mobile*/
+
+	.laptop { display: none; }
+	.tablet-laptop { display: none; }
+	.tablet { display: none; }
+	.mobile-tablet { display: block; }
+	.mobile { display: block; }
+
+	/* background */
+	body { background: url(images/bkgMobile.jpg) fixed;}
+
+	/* header */
+	.site-header { min-height: 164px;	}
 
 
 /* tablet */
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 481px) {
 	.laptop { display: none; }
 	.tablet-laptop { display: block; }
 	.tablet { display: block; }
@@ -1463,13 +1451,15 @@ img#wpstats {
 	.front_article_title_black_box { height: 34px; }
 	.front_article_title { font-size: 16pt; line-height: 34px; }
 
+	/* background */
+	body { background: url(images/bkgTablet.jpg) fixed;}
 
 
 
 }
 
 /* laptop */
-@media screen and (min-width: 830px) {
+@media screen and (min-width: 801px) {
 	
 	.laptop { display: block; }
 	.tablet-laptop { display: block; }
@@ -1485,6 +1475,14 @@ img#wpstats {
 	.entry-content img, .comment-content img, .widget img, img.header-image, .author-avatar img, img.wp-post-image { border-radius: 3px; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2); }
 	.box { background: #FFFFFF; border: 1px solid #DDDDDD; border-radius: 5px; padding: 10px; box-shadow: 0 0 1px #999999; margin-bottom: 15px; }
 	.box-content { padding: 0; }
+
+	/* background */
+	body { background: none; }
+	#page_wrapper { background: #ECECEC url(images/door.jpg) no-repeat scroll right bottom; }
+	.site-header { background: url(images/header.jpg) no-repeat; min-height: 164px;	}
+	.logo { float: left; height: 90px; width: 230px; margin: 24px 0 0 9px; background: url(images/logo.jpg) repeat scroll 0 0 transparent; }
+	
+
 
 	.author-avatar {
 		float: left;

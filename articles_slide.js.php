@@ -26,12 +26,29 @@
 					$("#thumbslide").swipe( {
 						//Generic swipe handler for all directions
 						swipeStatus:function(event, phase, direction, distance) {
-							$("#test").text("You swiped " + direction );	
+							$("#test").text("You swiped " + direction + " "  + distance + " " + $("#thumbslide").css("-webkit-transform"));
+							scrollImages($("#thumbslide"), distance, 0);
 						},
 						allowPageScroll:"vertical",
 						//Default is 75px, set to 0 for demo so any distance triggers swipe
 					   threshold:0
 					});
+					
+					function scrollImages(thediv, distance, duration)
+					{
+						thediv.css("-webkit-transition-duration", (duration/1000).toFixed(1) + "s");
+						thediv.css("-moz-transition-duration", (duration/1000).toFixed(1) + "s");
+						
+						//inverse the number we set in the css
+						var value = "-"+distance;//(distance<0 ? "" : "-") + Math.abs(distance).toString();
+						
+						thediv.css("-webkit-transform", "translate3d("+value +"px,0px,0px)");
+						thediv.css("-moz-transform", "translate3d("+value +"px,0px,0px)");
+						thediv.css("-ms-transform", "translateX("+value +"px)");
+					}
+					
 				});
+				
+				
 </script>
 <div id="test" class="testbox">Swipe me</div>
