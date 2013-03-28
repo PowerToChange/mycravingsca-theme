@@ -1437,7 +1437,7 @@ img#wpstats {
 	body { background: url(images/bkgMobile.jpg) fixed;}
 
 	/* header */
-	.site-header { min-height: 164px;	}
+	.site-header { min-height: 100px;	}
 
 
 /* tablet */
@@ -1454,6 +1454,8 @@ img#wpstats {
 	/* background */
 	body { background: url(images/bkgTablet.jpg) fixed;}
 
+	/* header */
+	.site-header { min-height: 100px;	}
 
 
 }
