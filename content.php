@@ -18,7 +18,7 @@
 			<?php if ( is_single() ) : ?>
 			<div class="front_article">
 				<div class="front_article_title_black_box"></div>
-				<div class="front_article_title"><?php the_title(); ?></div>
+				<div class="front_article_title tk-league-gothic"><?php the_title(); ?></div>
 				<?php the_post_thumbnail('full'); ?>
 			</div>
 			<?php else : ?>
@@ -39,7 +39,7 @@
 			</div><!-- .entry-summary -->
 			<?php else : ?>
 			<div class="entry-content">
-				<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentytwelve' ) ); ?>
+				<span class="tk-nimbus-sans"><?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentytwelve' ) ); ?></span>
 				<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'twentytwelve' ), 'after' => '</div>' ) ); ?>
 			</div><!-- .entry-content -->
 			<?php endif; ?>

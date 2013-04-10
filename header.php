@@ -28,17 +28,18 @@
 
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script src="<?php bloginfo('template_url') ?>/js/more_articles.js"></script>
-
+<?php include_once('head-include-typekit.php'); // include typekit requirements ?>
 <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
 <div id="head_wrapper" class="site">
 	<header id="masthead" class="site-header" role="banner">
+		<div id="logowrapper"></div>
 		<a class="logo" href="<?php bloginfo( 'url' ); ?>"></a>
 		<div class="clear"></div>
 		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<h3 class="menu-toggle"><?php _e( 'Menu', 'twentytwelve' ); ?></h3>
+			<h3 class="menu-toggle">menu&nbsp;&nbsp;</h3>
 			<a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentytwelve' ); ?>"><?php _e( 'Skip to content', 'twentytwelve' ); ?></a>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
 		</nav><!-- #site-navigation -->
