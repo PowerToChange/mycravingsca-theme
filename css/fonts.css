@@ -20,5 +20,16 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'SocialCircle';
+    src: url(social-circle/entypo-social.eot);
+    src: url(entypo/entypo-social/entypo-social.eot?#iefix) format('embedded-opentype'),
+         url(entypo/entypo-social/entypo-social.woff) format('woff'),
+         url(entypo/entypo-social/entypo-social.ttf) format('truetype'),
+         url(entypo/entypo-social/entypo-social.svg#EntypoSocial) format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .entypo { font-family: Entypo; }
 .entypo-social { font-family: EntypoSocial; }

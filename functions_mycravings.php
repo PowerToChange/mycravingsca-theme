@@ -9,6 +9,9 @@ define('MOBILETHUMB_WIDTH', 180);
 
 function show_front_page()
 {
+	global $is_the_front_page;
+	$is_the_front_page = true;
+	
 	$front_page = collect_articles_placement();
 	
 	require('index-front-article.php');
@@ -136,7 +139,11 @@ function collect_recent_and_others(&$front_page)
 		wp_reset_postdata();
 }
 
-
+//function is_front_page()
+//{
+//	global $is_the_front_page;
+//	return ($is_the_front_page ? true : false);
+//}
 
 
 /*################################################################

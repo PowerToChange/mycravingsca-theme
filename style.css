@@ -178,6 +178,8 @@ h2 {
 .five-px-bottom { margin-bottom: 5px; }
 .box-content {padding: 0 10px; }
 
+.ss-icon { font-size: 40px; text-align: center; }
+
 /* Clearing floats */
 .clear:after,
 .wrapper:after,
@@ -1414,6 +1416,13 @@ img#wpstats {
 	#logowrapper { position: absolute; top: 24px; opacity: 0.7; background-color: black; height: 90px; width: 80%; }
 	.logo { position: absolute; top: 36px; left: 21px; height: 90px; width: 230px; background: url(images/logo-mobile.png) no-repeat scroll 0 0 transparent; }
 
+	/* footer */
+	#mobile-tablet-footer { position: relative; color: white; text-align: center; }
+	#mobile-tablet-footer .inside-content { font-size: 20px; }
+	#mobile-tablet-footer .social-icons { margin-top: 20px; }
+	.transparent-black-box { position: absolute; top: 0; left: 0; background-color: black; opacity: 0.7; width: 100%; height: 400px; }
+	.inside-content { position: absolute; top: 35px; left: 0; width: 100%;}
+	
 
 /* tablet */
 @media screen and (min-width: 481px) {

@@ -27,6 +27,7 @@
 <![endif]-->
 
  <link href="<?php bloginfo('template_url'); ?>/css/fonts.css" rel="stylesheet" />
+ <link href="<?php bloginfo('template_url'); ?>/css/social-circle/ss-social-circle.css" rel="stylesheet" />
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script src="<?php bloginfo('template_url') ?>/js/more_articles.js"></script>
 <?php include_once('head-include-typekit.php'); // include typekit requirements ?>

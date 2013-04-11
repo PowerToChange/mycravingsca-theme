@@ -13,7 +13,8 @@
 	</div><!-- #main .wrapper -->
 </div><!-- #page -->
 </div><!-- #page_wrapper -->
-<div id="large_footer">
+<?php include('footer-mobile-tablet.php'); ?>
+<div id="large_footer" class="laptop">
 <div id="footer_wrapper" class="site">
 		<footer id="colophon" role="contentinfo">
 			<div class="site-info">
@@ -24,6 +25,10 @@
 	</div><!-- #footer_wrapper -->
 </div><!-- #large_footer -->
 <?php wp_footer(); ?>
+
+<!-- optional .js for legacy browser support -->
+<script src="<?php bloginfo('template_url') ?>/css/social-circle/ss-social.js"></script>
+
 <script src="<?php bloginfo('template_url') ?>/js/fitvids.js"></script>
   <script>
     $(document).ready(function(){
