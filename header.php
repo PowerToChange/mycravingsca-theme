@@ -26,6 +26,7 @@
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
 
+ <link href="<?php bloginfo('template_url'); ?>/css/fonts.css" rel="stylesheet" />
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script src="<?php bloginfo('template_url') ?>/js/more_articles.js"></script>
 <?php include_once('head-include-typekit.php'); // include typekit requirements ?>
@@ -38,12 +39,13 @@
 		<div id="logowrapper"></div>
 		<a class="logo" href="<?php bloginfo( 'url' ); ?>"></a>
 		<div class="clear"></div>
+		<div id="menubar" class="mobile-tablet">
 		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<h3 class="menu-toggle">menu&nbsp;&nbsp;</h3>
-			<a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentytwelve' ); ?>"><?php _e( 'Skip to content', 'twentytwelve' ); ?></a>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
+			<h3 class="menu-toggle"><span class="tk-nimbus-sans">menu</span>&nbsp;<span class="entypo">&darr;</span>&nbsp;&nbsp;</h3>
+			<span class="tk-abril-dsplay mobile-tablet"><em><?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?></em></span>
+			<span class="laptop"><?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?></span>
 		</nav><!-- #site-navigation -->
-
+		</div>
 		<?php $header_image = get_header_image();
 		if ( ! empty( $header_image ) ) : ?>
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( $header_image ); ?>" class="header-image" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" /></a>

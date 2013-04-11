@@ -30,8 +30,10 @@
 		</header><!-- .entry-header -->
 		<div class="box-content">
 			<?php if ( is_single() ) { ?>
-				<span class="caption"><?php echo get_post(get_post_thumbnail_id())->post_excerpt; ?></span><br/>
-				<span class="authorField">Written By <?php the_author_posts_link(); ?></span><br/><br/>
+				<em>
+					<span class="caption tk-nimbus-sans"><?php echo get_post(get_post_thumbnail_id())->post_excerpt; ?></span><br/>
+					<span class="authorField tk-nimbus-sans">Written By <?php the_author_posts_link(); ?></span>
+				</em><br/><br/>
 				<?php } ?>
 			<?php if ( is_search() ) : // Only display Excerpts for Search ?>
 			<div class="entry-summary">
@@ -44,7 +46,7 @@
 			</div><!-- .entry-content -->
 			<?php endif; ?>
 	
-			<footer class="entry-meta">
+			<footer class="entry-meta tk-nimbus-sans">
 				<?php if ( is_single() ) { the_tags( '<p>Tags: ', ', ', '</p>'); } ?>
 			</footer><!-- .entry-meta -->
 			<?php if ( is_single() ) { comments_template( '', true ); } ?>

@@ -255,8 +255,8 @@ input[type="color"] {
 
 /* Buttons */
 
-.menu-toggle { position:absolute; bottom: 0; left: 0; background: black; color: white; padding-top: 3px; text-align: right; width: 100%; height: 20px; }
-
+.menu-toggle {  height: 20px; text-align: right; }
+#menubar { position:absolute; bottom: 0; left: 0; background: black; color: white; padding-top: 3px; width: 100%; }
 
 input[type="submit"],
 input[type="button"],
@@ -430,7 +430,6 @@ img.wp-smiley,
 }
 #nav-above {
 	padding: 24px 0;
-	padding: 1.714285714rem 0;
 }
 #nav-above {
 	display: none;
@@ -458,7 +457,6 @@ img.wp-smiley,
 /* Author profiles */
 .author .archive-header {
 	margin-bottom: 24px;
-	margin-bottom: 1.714285714rem;
 }
 .author-info {
 	border-top: 1px solid #ededed;
@@ -506,29 +504,6 @@ a:hover {
 	color: #0f3647;
 }
 
-/* Assistive text */
-.assistive-text,
-.site .screen-reader-text {
-	position: absolute !important;
-	clip: rect(1px, 1px, 1px, 1px);
-}
-.main-navigation .assistive-text:hover,
-.main-navigation .assistive-text:active,
-.main-navigation .assistive-text:focus {
-	background: #fff;
-	border: 2px solid #333;
-	border-radius: 3px;
-	clip: auto !important;
-	color: #000;
-	display: block;
-	font-size: 12px;
-	padding: 12px;
-	position: absolute;
-	top: 5px;
-	left: 5px;
-	z-index: 100000; /* Above WP toolbar */
-}
-
 /* Page structure */
 .site {
 	padding: 0;
@@ -545,22 +520,19 @@ a:hover {
 }
 
 /* Navigation Menu */
-.main-navigation {
-	text-align: center;
-	margin-top: 14px;
-}
+
 .main-navigation li {
-	margin-top: 24px;
-	margin-top: 1.714285714rem;
-	font-size: 14px;
-	font-weight: bold;
-	line-height: 1.42857143;
+	text-align: right;
+	margin: 5px;
 }
+
+.main-navigation ul { margin: 10px 5px; }
+
 .main-navigation a {
-	color: #5e5e5e;
+	color: white;
 }
 .main-navigation a:hover {
-	color: #21759b;
+	color: #999999;
 }
 .main-navigation ul.nav-menu,
 .main-navigation div.nav-menu > ul {
@@ -568,7 +540,7 @@ a:hover {
 }
 .main-navigation ul.nav-menu.toggled-on,
 .menu-toggle {
-	display: inline-block;
+	display: block;
 }
 
 /* Banner */

@@ -12,6 +12,8 @@
 
 	<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
 		<div id="secondary" class="widget-area box" role="complementary">
+			<span style="font-size: 50px;" class="entypo-social">&#62218;</span>
+			<span style="font-size: 50px;" class="entypo">&darr;</span>
 			<?php dynamic_sidebar( 'sidebar-1' ); ?>
 		</div><!-- #secondary -->
 	<?php endif; ?>
