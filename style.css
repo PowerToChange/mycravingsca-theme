@@ -1396,6 +1396,16 @@ img#wpstats {
 	margin: 0 auto 1.714285714rem;
 }
 
+/* twitter js */
+.twtr-hd { display: none; }
+.twtr-doc { margin: 30px auto; border-radius: 0 !important; }
+.twtr-tweet { border-bottom: 0 !important; }
+.twtr-join-conv { display: none !important; }
+.twtr-ft a { position: absolute; bottom: 8px: right: 8px; float: none !important; }
+.twtr-tweet-wrap { margin: 5px 30px; }
+.twtr-bd { margin-bottom: -37px; }
+
+
 /* =Media queries
 -------------------------------------------------------------- */
 
