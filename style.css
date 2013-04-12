@@ -1309,11 +1309,7 @@ a.comment-edit-link:hover {
 
 #ts_wrapper
 {
-	display:block;
-	height:140px;
 	width:100%;
-	overflow:hidden;
-	position:relative;
 }
 
 #thumbslide 
@@ -1401,7 +1397,7 @@ img#wpstats {
 .twtr-doc { margin: 20px auto; border-radius: 0 !important; }
 .twtr-tweet { border-bottom: 0 !important; }
 .twtr-join-conv { display: none !important; }
-.twtr-ft a { position: absolute; bottom: 8px; right: 8px; float: none !important; }
+.twtr-ft a { position: absolute; bottom: 10px; right: 10px; float: none !important; z-index: 10; }
 .twtr-tweet-wrap { margin: 5px 25px; font-style: italic; font-size: 10px; }
 .twtr-bd { margin-bottom: -20px; }
 
@@ -1416,6 +1412,7 @@ img#wpstats {
 	.tablet { display: none; }
 	.mobile-tablet { display: block; }
 	.mobile { display: block; }
+	.pad { padding: 10px; }
 
 	/* background */
 	body { background: url(images/bkgMobile.jpg) fixed;}
@@ -1430,8 +1427,10 @@ img#wpstats {
 	#mobile-tablet-footer { position: relative; color: white; text-align: center; }
 	#mobile-tablet-footer .inside-content { font-size: 20px; }
 	#mobile-tablet-footer .social-icons { margin-top: 20px; }
-	.transparent-black-box { position: absolute; top: 0; left: 0; background-color: black; opacity: 0.7; width: 100%; height: 400px; }
-	.inside-content { position: absolute; top: 35px; left: 0; width: 100%;}
+	.transparent-black-box { position: absolute; top: 0; left: 0; background-color: black; opacity: 0.7; width: 100%; height: 420px; }
+	.inside-content { position: absolute; top: 30px; left: 0; width: 100%; height: 390px; } /* must have 30px less in height than .transparent-black-box */
+	.transparent-black-box, .inside-content { }
+	#mobile-tablet-footer .footerLogo { float: none; position: absolute; bottom: 10px; right: 10px; height: 34px; width: 84px; background: url('images/small-p2c-logo.png'); }
 	
 
 /* tablet */

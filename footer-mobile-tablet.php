@@ -35,5 +35,8 @@
 					    behavior: 'all'
 					  }
 					}).render().setUser('my_cravings').start();
-					</script> 	</div>
+					</script> 	
+		<a class="footerLogo" href="http://p2c.com/students"></a>
+	</div>
+
 </div>
