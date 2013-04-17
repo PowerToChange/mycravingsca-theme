@@ -259,6 +259,7 @@ input[type="color"] {
 
 .menu-toggle {  height: 20px; text-align: right; }
 #menubar { position:absolute; bottom: 0; left: 0; background: black; color: white; padding-top: 3px; width: 100%; }
+#menubar-laptop { position:absolute; bottom: 0; left: 0; color: white; padding-top: 3px; width: 100%; }
 
 input[type="submit"],
 input[type="button"],
@@ -1471,9 +1472,10 @@ img#wpstats {
 	.site-header { background: url(images/header.jpg) no-repeat; min-height: 164px;	}
 	.logo { position: inherit; float: left; height: 90px; width: 230px; margin: 24px 0 0 9px; background: url(images/logo.jpg) repeat scroll 0 0 transparent; }
 
-	#head_wrapper { position: inherit; }
 	#logowrapper { display: none; }
-	
+	#menubar-laptop a {color: white; line-height: 35px; font-size: 16px; }
+	#menubar-laptop a:hover {color: white; }
+	#menubar-laptop li { float: left; padding: 0 20px 0 0; }
 
 
 	.author-avatar {

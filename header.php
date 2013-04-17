@@ -43,9 +43,12 @@
 		<div id="menubar" class="mobile-tablet">
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<h3 class="menu-toggle"><span class="tk-nimbus-sans">menu</span>&nbsp;<span class="entypo">&darr;</span>&nbsp;&nbsp;</h3>
-			<span class="tk-abril-dsplay mobile-tablet"><em><?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?></em></span>
-			<span class="laptop"><?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?></span>
+			<?php $html_menu = wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu', 'echo' => '0' ) ); ?>
+			<span class="tk-abril-dsplay mobile-tablet"><em><?php echo $html_menu; ?></em></span>
 		</nav><!-- #site-navigation -->
+		</div>
+		<div id="menubar-laptop" class="laptop">
+			<?php echo $html_menu; ?>
 		</div>
 		<?php $header_image = get_header_image();
 		if ( ! empty( $header_image ) ) : ?>
