@@ -112,7 +112,8 @@ function collect_recent_and_others(&$front_page)
 		while ( $query->have_posts() ) :
 			$query->the_post();
 			$id = get_the_ID();
-			if(!array_key_exists($id, $front_page['printed_ids']))
+			// if we did not already print it and if it should not be hidden
+			if(!array_key_exists($id, $front_page['printed_ids']) && !get_post_meta($id, 'hide_from_front_page', true))
 			{
 				$title = CropSentence(get_the_title(), MAX_TITLE_SIZE);
 
