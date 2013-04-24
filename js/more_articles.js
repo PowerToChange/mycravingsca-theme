@@ -12,4 +12,8 @@ $(document).ready(function() {
 		});
 		if(!keep_button) $(this).fadeOut(1000);
 	});
+	$('#other-posts-button').click(function(){
+		$('#others-box').fadeIn(1000);
+		$(this).fadeOut(1000);
+	});
 });

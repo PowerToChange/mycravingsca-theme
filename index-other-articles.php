@@ -4,8 +4,8 @@ if($front_page) if(count($front_page['others']))
 	
 	?>
 	<div class="clear"></div>
-	<div class="box relative">
-		<h2>Other Articles...</h2>
+	<div id="others-box" class="box relative laptop">
+		<h2 class="laptop">Other Articles...</h2>
 	<?php
 	$nb_articles = 0;
 	$row_number = 0;
