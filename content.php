@@ -15,7 +15,7 @@
 		</div>
 		<?php endif; ?>
 		<header class="entry-header">
-			<?php if ( is_single() ) : ?>
+			<?php if ( is_single() && !video_on_page() ) : ?>
 			<div class="front_article">
 				<div class="front_article_title_black_box"></div>
 				<div class="front_article_title tk-league-gothic"><?php the_title(); ?></div>

@@ -140,6 +140,12 @@ function collect_recent_and_others(&$front_page)
 		wp_reset_postdata();
 }
 
+function video_on_page()
+{
+	$content = get_the_content();
+	return preg_match('#vimeo.com|youtube.com#', $content);
+}
+
 //function is_front_page()
 //{
 //	global $is_the_front_page;
