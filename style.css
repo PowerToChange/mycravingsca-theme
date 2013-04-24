@@ -1642,7 +1642,12 @@ img#wpstats {
 		margin-left: 48px;
 		margin-left: 3.428571429rem;
 	}
-	
+	.entry-content p,
+	.entry-summary p,
+	.comment-content p,
+	.mu_register p {
+		font-size: 18px;
+	}
 
 }
 

@@ -4,7 +4,7 @@ if($front_page) if(count($front_page['others']))
 	
 	?>
 	<div class="clear"></div>
-	<div class="box relative laptop">
+	<div class="box relative">
 		<h2>Other Articles...</h2>
 	<?php
 	$nb_articles = 0;
