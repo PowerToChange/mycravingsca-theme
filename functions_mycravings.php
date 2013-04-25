@@ -146,6 +146,21 @@ function video_on_page()
 	return preg_match('#vimeo.com|youtube.com#', $content);
 }
 
+function facebook_head_stuff()
+{
+	$id = get_the_ID();
+	if($id)
+	{
+		$the_img = get_the_post_thumbnail($id);
+		if($the_img && preg_match_all('#src="([^"]*)"#i', $the_img, $arr, PREG_PATTERN_ORDER))
+		{
+			$img_url = $arr[1][0];
+			if($img_url) echo "<meta property=\"og:image\" content=\"{$img_url}\"/>
+";
+		}
+	}
+}
+
 //function is_front_page()
 //{
 //	global $is_the_front_page;
