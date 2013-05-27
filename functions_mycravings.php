@@ -115,7 +115,7 @@ function collect_recent_and_others(&$front_page)
 			// if we did not already print it and if it should not be hidden
 			if(!array_key_exists($id, $front_page['printed_ids']) && !get_post_meta($id, 'hide_from_front_page', true))
 			{
-				$title = CropSentence(get_the_title(), MAX_TITLE_SIZE);
+				$title = mycravings_excerpt();
 
 				$nb_recent++;
 				if($nb_recent <= $nb_featured)
@@ -140,25 +140,39 @@ function collect_recent_and_others(&$front_page)
 		wp_reset_postdata();
 }
 
+function mycravings_excerpt()
+{
+	return CropSentence(strip_tags(get_the_excerpt()), FEATURED_EXCERPT_SIZE);
+}
+
 function video_on_page()
 {
 	$content = get_the_content();
 	return preg_match('#vimeo.com|youtube.com#', $content);
 }
 
-function facebook_head_stuff()
-{
-	$id = get_the_ID();
-	if($id)
-	{
-		$the_img = get_the_post_thumbnail($id);
-		if($the_img && preg_match_all('#src="([^"]*)"#i', $the_img, $arr, PREG_PATTERN_ORDER))
-		{
-			$img_url = $arr[1][0];
-			if($img_url) echo "<meta property=\"og:image\" content=\"{$img_url}\"/>
+function facebook_head_stuff() {
+  if (have_posts()) {
+    the_post();
+    $id = get_the_ID();
+    $title = get_the_title();
+    $url = get_permalink();
+    $excerpt = get_the_excerpt();
+    echo "<meta property=\"og:url\" content=\"{$url}\"/>
+<meta property=\"og:title\" content=\"{$title}\"/>
+<meta property=\"og:description\" content=\"{$excerpt}\"/>
 ";
-		}
-	}
+    if ($id) {
+      $the_img = get_the_post_thumbnail($id);
+      if ($the_img && preg_match_all('#src="([^"]*)"#i', $the_img, $arr, PREG_PATTERN_ORDER)) {
+        $img_url = $arr[1][0];
+        if ($img_url)
+          echo "<meta property=\"og:image\" content=\"{$img_url}\"/>
+";
+      }
+    }
+		rewind_posts();
+  }
 }
 
 //function is_front_page()
