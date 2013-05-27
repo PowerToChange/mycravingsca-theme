@@ -115,7 +115,7 @@ function collect_recent_and_others(&$front_page)
 			// if we did not already print it and if it should not be hidden
 			if(!array_key_exists($id, $front_page['printed_ids']) && !get_post_meta($id, 'hide_from_front_page', true))
 			{
-				$title = mycravings_excerpt();
+				$title = CropSentence(get_the_title(), MAX_TITLE_SIZE);
 
 				$nb_recent++;
 				if($nb_recent <= $nb_featured)
