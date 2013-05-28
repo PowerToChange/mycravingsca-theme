@@ -168,6 +168,7 @@ function mycravings_excerpt()
 
 function video_on_page($post_id = NULL) {
 	global $id;
+	$ret = false;
 	$content = NULL;
 	// if we are not in the loop
 	if($id != $post_id)
@@ -177,7 +178,14 @@ function video_on_page($post_id = NULL) {
 	}
 	// if we are in the loop
   if(!$content) $content = get_the_content();
-  return preg_match('#vimeo.com|youtube.com|globalshortfilmnetwork.com#', $content);
+  if(preg_match_all('#<([^ <>/]+) [^>]+(vimeo.com|youtube.com|globalshortfilmnetwork.com)[^>]+>#', $content, $arr, PREG_PATTERN_ORDER))
+	{
+		foreach ($arr[1] as $tag) 
+		{
+			if(strtolower($tag) != 'a') $ret = true;
+		}
+	}
+	return $ret;
 }
 
 function mycravings_get_thumbnail($id, $thumb = NULL)
