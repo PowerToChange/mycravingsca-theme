@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'Entypo';
-    src: url(entypo/entypo/entypo.eot);
-    src: url(entypo/entypo/entypo.eot?#iefix) format('embedded-opentype'),
-         url(entypo/entypo/entypo.woff) format('woff'),
-         url(entypo/entypo/entypo.ttf) format('truetype'),
-         url(entypo/entypo/entypo.svg#Entypo) format('svg');
+    src: url(entypo/entypo/entypo-webfont.eot);
+    src: url(entypo/entypo/entypo-webfont.eot?#iefix) format('embedded-opentype'),
+         url(entypo/entypo/entypo-webfont.woff) format('woff'),
+         url(entypo/entypo/entypo-webfont.ttf) format('truetype'),
+         url(entypo/entypo/entypo-webfont.svg#Entypo) format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -31,5 +31,5 @@
     font-style: normal;
 }
 
-.entypo { font-family: Entypo; }
+.entypo { font-family: Entypo; text-transform: none; }
 .entypo-social { font-family: EntypoSocial; }

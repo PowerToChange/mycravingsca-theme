@@ -14,7 +14,7 @@ if($front_page)
 if($fas) foreach ($fas as $fa) {
 	?>
 	<li>
-		<a href="<?php echo $fa['url']; ?>"><? echo get_the_post_thumbnail($fa['id'], 'mycravings_thumb'); ?></a>
+		<a href="<?php echo $fa['url']; ?>"><? echo mycravings_get_thumbnail($fa['id'], 'mycravings_thumb'); ?></a>
 		<a class="fa-title" href="<?php echo $fa['url']; ?>"><strong><?php echo $fa['title']; ?></strong></a>
 		<?php echo $fa['excerpt']; ?>
 		<a href="<?php echo $fa['url']; ?>">Read More &gt;</strong></a><br />

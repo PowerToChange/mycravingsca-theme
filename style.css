@@ -172,6 +172,8 @@ h2 {
 	background: #FFFFFF;
 }
 
+.entypo-left { float: left; font-size: 2.6em; line-height: 0.2em; margin-top: -0.05em; margin-right: 0.05em; }
+.front_article_title .entypo-left { line-height: 0.7em; }
 .left { float: left; }
 .right { float: right; }
 .half { width: 46% }

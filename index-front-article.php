@@ -8,9 +8,9 @@ if(array_key_exists('front', $front_page))
 	$id = $front_page['front']['id'];
 	$post = get_post($id);
 	$url = $front_page['front']['url'];
-	$title = $post->post_title;
+	$title = video_icon($id) . $post->post_title;
 	
-	$img = get_the_post_thumbnail($id, 'mycravings_full');
+	$img = mycravings_get_thumbnail($id, 'mycravings_full');
 	
 	$post = $save_post;
 ?>

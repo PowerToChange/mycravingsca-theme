@@ -16,7 +16,7 @@ if($front_page) if(count($front_page['others']))
 		?>
 			<div class="article_preview" rowNumber="<?php echo $show_row_number; ?>">
 				<strong><a href="<?php echo $oa['url']; ?>">
-				<?php echo get_the_post_thumbnail($oa['id'], 'mycravings_thumb'); ?>
+				<?php echo mycravings_get_thumbnail($oa['id'], 'mycravings_thumb'); ?>
 			    <?php echo $oa['title']; ?></a></strong>
 			</div>
 		<?php

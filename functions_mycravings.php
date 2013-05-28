@@ -85,7 +85,7 @@ function collect_featured(&$items, &$front_page)
 				// get that post
 				$post = get_post($id);
 				$excerpt = CropSentence(strip_tags($post->post_content), FEATURED_EXCERPT_SIZE);
-				$title = CropSentence($post->post_title, MAX_TITLE_SIZE);
+				$title = video_icon($id) . CropSentence($post->post_title, MAX_TITLE_SIZE);
 				
 				//id, url, title, excerpt
 				$front_page['printed_ids'][$id] = true;
@@ -115,7 +115,7 @@ function collect_recent_and_others(&$front_page)
 			// if we did not already print it and if it should not be hidden
 			if(!array_key_exists($id, $front_page['printed_ids']) && !get_post_meta($id, 'hide_from_front_page', true))
 			{
-				$title = CropSentence(get_the_title(), MAX_TITLE_SIZE);
+				$title = video_icon() . CropSentence(get_the_title(), MAX_TITLE_SIZE);
 
 				$nb_recent++;
 				if($nb_recent <= $nb_featured)
@@ -140,15 +140,99 @@ function collect_recent_and_others(&$front_page)
 		wp_reset_postdata();
 }
 
+function video_icon($post_id = NULL)
+{
+	$ret = '';
+	if (is_video($post_id)) $ret = '<span class="entypo entypo-left">q</span> ';
+	return $ret;
+}
+
+function is_video($post_id = NULL)
+{
+	global $id;
+	if(!$post_id) $post_id = $id;
+	$ret = get_post_meta($post_id, 'post_is_a_video', true);
+	if($ret != 'true' && $ret != 'false')
+	{
+		$ret = 'false';
+		if(video_on_page($post_id)) $ret = 'true';
+		add_post_meta($post_id, 'post_is_a_video', $ret);
+	}
+	return ($ret == 'true');
+}
+
 function mycravings_excerpt()
 {
 	return CropSentence(strip_tags(get_the_excerpt()), FEATURED_EXCERPT_SIZE);
 }
 
-function video_on_page()
+function video_on_page($post_id = NULL) {
+	global $id;
+	$content = NULL;
+	// if we are not in the loop
+	if($id != $post_id)
+	{
+		$my_post = get_post($post_id);
+		$content = $my_post->post_content;
+	}
+	// if we are in the loop
+  if(!$content) $content = get_the_content();
+  return preg_match('#vimeo.com|youtube.com|globalshortfilmnetwork.com#', $content);
+}
+
+function mycravings_get_thumbnail($id, $thumb = NULL)
 {
-	$content = get_the_content();
-	return preg_match('#vimeo.com|youtube.com#', $content);
+	$ret = get_the_post_thumbnail($id, $thumb);
+	if(is_video($id))
+	{
+		if(preg_match_all('#http://.*\.jpe?g#i', $ret, $arr, PREG_PATTERN_ORDER))
+		{
+			$url = $arr[0][0];
+			get_video_img($url);
+			$ret = mycravings_video_url_replace($ret);
+		}
+	}
+	return $ret;
+}
+
+function mycravings_video_url_replace($url)
+{
+	return preg_replace('#/([^/]+)\.jp#', '/\1-vid.jp', $url);
+}
+
+function get_video_img($url)
+{
+	$site = $_SERVER['HTTP_HOST'];
+	$base_path = $_SERVER['DOCUMENT_ROOT'];
+	$path = str_replace('http://' . $site . '/', $base_path, $url);
+	$newpath = mycravings_video_url_replace($path);
+	$newurl = mycravings_video_url_replace($url);
+	if(!file_exists($newpath))
+	{
+		$cur = imagecreatefromjpeg($path);
+		imagealphablending($cur, true);
+		imagesavealpha($cur, true);
+		list($w, $h) = getimagesize($path);
+		$divider = 7;
+		if($w < 200) $divider = 4;
+		if($w < 100) $divider = 3;
+		
+		$butdim = floor($w / $divider);
+		$hbd = floor($butdim / 2);
+		$butx = floor($w / 2) - $hbd;
+		$buty = floor($h / 2) - $hbd;
+		
+		$play = imagecreatefrompng(get_stylesheet_directory() . '/images/play_icon.png');
+		imagealphablending($play, true);
+		imagesavealpha($play, true);
+		
+		imagecopyresized($cur, $play, $butx, $buty, 0, 0, $butdim, $butdim, 89, 89);
+		imagedestroy($play);
+	
+		imagejpeg($cur, $newpath);
+		imagedestroy($cur);
+	}
+	return $newurl;
 }
 
 function facebook_head_stuff() {
@@ -163,7 +247,7 @@ function facebook_head_stuff() {
 <meta property=\"og:description\" content=\"{$excerpt}\"/>
 ";
     if ($id) {
-      $the_img = get_the_post_thumbnail($id);
+      $the_img = mycravings_get_thumbnail($id);
       if ($the_img && preg_match_all('#src="([^"]*)"#i', $the_img, $arr, PREG_PATTERN_ORDER)) {
         $img_url = $arr[1][0];
         if ($img_url)
