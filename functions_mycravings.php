@@ -143,7 +143,7 @@ function collect_recent_and_others(&$front_page)
 function video_icon($post_id = NULL)
 {
 	$ret = '';
-	if (is_video($post_id)) $ret = '<span class="entypo entypo-left">q</span> ';
+	if (is_video($post_id)) $ret = '<span class="ssb-icon">&#x1F4F9;</span> ';
 	return $ret;
 }
 
