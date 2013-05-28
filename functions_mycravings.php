@@ -183,7 +183,7 @@ function video_on_page($post_id = NULL) {
 function mycravings_get_thumbnail($id, $thumb = NULL)
 {
 	$ret = get_the_post_thumbnail($id, $thumb);
-	if(is_video($id))
+	if(false && is_video($id))
 	{
 		if(preg_match_all('#http://.*\.jpe?g#i', $ret, $arr, PREG_PATTERN_ORDER))
 		{
