@@ -8,17 +8,8 @@ if($front_page)
 <h2><?php echo $box_title; ?></h2>
 <ul class="featured-articles">
 <?php
-if(array_key_exists($box_key, $front_page)) foreach ($front_page[$box_key] as $fa) {
-	$more_text = "Read More";
-	if(is_video($fa['id'])) $more_text = "Watch";
-	?>
-	<li>
-		<a href="<?php echo $fa['url']; ?>"><? echo mycravings_get_thumbnail($fa['id'], 'mycravings_thumb'); ?></a>
-		<a class="fa-title" href="<?php echo $fa['url']; ?>"><strong><?php echo $fa['title']; ?></strong></a>
-		<?php echo $fa['excerpt']; ?>
-		<a href="<?php echo $fa['url']; ?>"><?php echo $more_text; ?> &gt;</strong></a><br />
-	</li>
-	<?php
+foreach ($front_page[$box_key] as $fa) {
+	mc_use_template_part_with_data('article-listed-with-excerpt.php', $fa);
 }
 ?>
 </ul>

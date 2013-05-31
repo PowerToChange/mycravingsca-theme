@@ -2,7 +2,7 @@
 	<div class="transparent-black-box"></div>
 	<div class="inside-content">
 		<?php if(is_front_page()) { ?>
-			<span id="other-posts-button" class="tk-nimbus-sans">OTHER POSTS &rarr;</span>
+			<span id="other-posts-button" class="tk-nimbus-sans">AUTRES ARTICLES &rarr;</span>
 		<?php } //if(is_front_page()) ?>
 		<div class="social-icons"><?php include('social-icons.php'); ?></div>
 					<script src="http://widgets.twimg.com/j/2/widget.js"></script> 

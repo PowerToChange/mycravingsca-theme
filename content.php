@@ -32,7 +32,7 @@
 			<?php if ( is_single() ) { ?>
 				<em>
 					<span class="caption tk-nimbus-sans"><?php echo get_post(get_post_thumbnail_id())->post_excerpt; ?></span><br/>
-					<span class="authorField tk-nimbus-sans">Written By <?php the_author_posts_link(); ?></span>
+					<span class="authorField tk-nimbus-sans"><?php echo mc_t('Written By'); ?> <?php the_author_posts_link(); ?></span>
 				</em><br/><br/>
 				<?php } ?>
 			<?php if ( is_search() ) : // Only display Excerpts for Search ?>

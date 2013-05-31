@@ -11,15 +11,8 @@ if($front_page)
 <div id="ts_wrapper" class="box pad mobile-tablet">
 	<ul class="featured-articles">
 <?php
-if($fas) foreach ($fas as $fa) {
-	?>
-	<li>
-		<a href="<?php echo $fa['url']; ?>"><? echo mycravings_get_thumbnail($fa['id'], 'mycravings_thumb'); ?></a>
-		<a class="fa-title" href="<?php echo $fa['url']; ?>"><strong><?php echo $fa['title']; ?></strong></a>
-		<?php echo $fa['excerpt']; ?>
-		<a href="<?php echo $fa['url']; ?>">Read More &gt;</strong></a><br />
-	</li>
-	<?php
+foreach ($fas as $fa) {
+	mc_use_template_part_with_data('article-listed-with-excerpt.php', $fa);
 }
 ?>
 	</ul>

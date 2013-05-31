@@ -37,24 +37,34 @@ get_header(); ?>
 			?>
 
 			<?php twentytwelve_content_nav( 'nav-above' ); ?>
-
+			<div class="clear"></div>
 			<?php
 			// If a user has filled out their description, show a bio on their entries.
 			if ( get_the_author_meta( 'description' ) ) : ?>
-			<div class="author-info box">
+			<div class="author_presentation box tablet-laptop">
 				<div class="author-description">
-					<h1><?php printf( __( 'About %s', 'twentytwelve' ), get_the_author() ); ?></h1>
+					<div class="wrap_author_picture">
+							<?php the_author_image(); ?>
+							<div class="front_article_title_black_box"></div>
+							<div class="front_article_title tk-league-gothic"><?php the_author(); ?></div>
+					</div>
+					<p><?php the_author_meta( 'description' ); ?></p>
+				</div>
+			</div><!-- .author-info -->
+			<div class="author_presentation box mobile">
+				<div class="author-description">
+					<div class="center_this">
+						<div class="wrap_author_picture">
+								<?php the_author_image(); ?>
+								<div class="front_article_title_black_box"></div>
+								<div class="front_article_title tk-league-gothic"><?php the_author(); ?></div>
+						</div>
+					</div>
 					<p><?php the_author_meta( 'description' ); ?></p>
 				</div><!-- .author-description	-->
-					<?php the_author_image(); ?>
 			</div><!-- .author-info -->
 			<?php endif; ?>
-
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
-				<?php get_template_part( 'content', get_post_format() ); ?>
-			<?php endwhile; ?>
-
+			<?php require('article-list.php') ?>
 			<?php twentytwelve_content_nav( 'nav-below' ); ?>
 
 		<?php else : ?>
