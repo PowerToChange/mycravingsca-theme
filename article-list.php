@@ -8,7 +8,7 @@ while ( have_posts() ){
 ?>
 
 <div class="box pad tablet-laptop">
-		<h2>Articles</h2>
+		<h2><?php echo mc_t('Posts'); ?></h2>
 	<ul class="featured-articles double-display">
 <?php
 		foreach ($articles as $article) {

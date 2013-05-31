@@ -40,14 +40,15 @@ function mc_translate($str)
 	if(!$mc_translation_array)
 	{
 		$mc_translation_array = array(
-			'Featured Articles' => 'En vedette',
-			'Recent Articles' => 'Articles récents',
+			'Featured Posts' => 'En vedette',
+			'Recent Posts' => 'Articles récents',
 			'Read More' => 'Lire la suite',
 			'Watch' => 'Regarder',
-			'Other Articles...' => 'Autres articles...',
-			'More Articles...' => 'Plus d\'articles...',
+			'Other Posts...' => 'Autres articles...',
+			'More Posts...' => 'Plus d\'articles...',
 			'Written By' => 'Par',
 			'OTHER POSTS' => 'AUTRES ARTICLES',
+			'Posts' => 'Articles',
 		);
 	}
 	if(array_key_exists($str, $mc_translation_array))

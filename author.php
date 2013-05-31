@@ -63,6 +63,15 @@ get_header(); ?>
 					<p><?php the_author_meta( 'description' ); ?></p>
 				</div><!-- .author-description	-->
 			</div><!-- .author-info -->
+			<?php else : ?>
+				<?php $thumbnail_full = mc_load('thumbnail_full'); ?>
+			<div class="box">
+				<div class="front_article">
+					<div class="front_article_title_black_box"></div>
+					<div class="front_article_title tk-league-gothic"><?php the_author(); ?></div>
+					<?php echo $thumbnail_full; ?>
+				</div>
+			</div>
 			<?php endif; ?>
 			<?php require('article-list.php') ?>
 			<?php twentytwelve_content_nav( 'nav-below' ); ?>

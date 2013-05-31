@@ -5,7 +5,7 @@ if($front_page) if(count($front_page['others']))
 	?>
 	<div class="clear"></div>
 	<div id="others-box" class="box relative laptop">
-		<h2 class="laptop"><?php echo mc_t('Other Articles...'); ?></h2>
+		<h2 class="laptop"><?php echo mc_t('Other Posts...'); ?></h2>
 	<?php
 	$nb_articles = 0;
 	$row_number = 0;
@@ -30,7 +30,7 @@ if($front_page) if(count($front_page['others']))
 	}
 	?>
 			<div class="clear"></div>
-			<?php if($row_number > 1) { ?> <a class="moreArticlesLink"><?php echo mc_t('More Articles...'); ?></a> <?php } ?>
+			<?php if($row_number > 1) { ?> <a class="moreArticlesLink"><?php echo mc_t('More Posts...'); ?></a> <?php } ?>
 	</div>
 	<?php
 }
