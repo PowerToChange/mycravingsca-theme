@@ -47,6 +47,7 @@ function mc_translate($str)
 			'Other Articles...' => 'Autres articles...',
 			'More Articles...' => 'Plus d\'articles...',
 			'Written By' => 'Par',
+			'OTHER POSTS' => 'AUTRES ARTICLES',
 		);
 	}
 	if(array_key_exists($str, $mc_translation_array))
