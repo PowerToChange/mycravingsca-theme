@@ -1496,8 +1496,8 @@ img#wpstats {
 	.en .site-header { background: url(images/en/header.jpg) no-repeat; min-height: 164px;	}
 	.fr .site-header { background: url(images/fr/header.jpg) no-repeat; min-height: 164px;	}
 	.logo { position: inherit; float: left; height: 90px; width: 230px; margin: 24px 0 0 9px; }
-	.en .logo { background: url(images/logo.jpg) repeat scroll 0 0 transparent; }
-	.fr .logo { background: url(images/logo.jpg) repeat scroll 0 0 transparent; }
+	.en .logo { background: url(images/en/logo.jpg) repeat scroll 0 0 transparent; }
+	.fr .logo { background: url(images/fr/logo.jpg) repeat scroll 0 0 transparent; }
 
 	#logowrapper { display: none; }
 	#menubar-laptop a {color: white; line-height: 35px; font-size: 16px; }
