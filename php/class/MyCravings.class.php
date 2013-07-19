@@ -114,11 +114,11 @@ class MyCravings
 	function facebook_head_stuff() {
 	  if (have_posts()) {
 	    the_post();
-			extract(mc_load(array('straight_title', 'url', 'excerpt', 'thumbnail_url')));
+			extract(mc_load(array('straight_title', 'url', 'facebook_excerpt', 'thumbnail_url')));
 	
 	    echo "<meta property=\"og:url\" content=\"{$url}\"/>
 	<meta property=\"og:title\" content=\"{$straight_title}\"/>
-	<meta property=\"og:description\" content=\"{$excerpt}\"/>
+	<meta property=\"og:description\" content=\"{$facebook_excerpt}\"/>
 	";
 		  if ($thumbnail_url)
 	    	echo "<meta property=\"og:image\" content=\"{$thumbnail_url}\"/>

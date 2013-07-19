@@ -26,7 +26,7 @@
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
-
+  <link rel="shortcut icon" type="image/x-icon" href="<?php bloginfo('template_url'); ?>/images/favicon.ico" />
  <link href="<?php bloginfo('template_url'); ?>/css/fonts.css" rel="stylesheet" />
  <link href="<?php bloginfo('template_url'); ?>/css/social-circle/ss-social-circle.css" rel="stylesheet" />
  <link href="<?php bloginfo('template_url'); ?>/css/ss-symbolicons-block/ss-symbolicons-block.css" rel="stylesheet" />

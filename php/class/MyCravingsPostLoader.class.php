@@ -21,6 +21,11 @@ class MyCravingsPostLoader extends WordpressPostLoader
 		return $this->CropSentence(strip_tags(parent::get_excerpt()), FEATURED_EXCERPT_SIZE);
 	}
 	
+	function get_facebook_excerpt()
+	{
+		return $this->CropSentence(strip_tags(parent::get_excerpt()), 300);
+	}
+	
 	function get_straight_title()
 	{
 		return parent::get_title();
@@ -58,6 +63,10 @@ class MyCravingsPostLoader extends WordpressPostLoader
 			
 			case 'thumbnail_thumb':
 				$ret = $this->get_from_array(array('type' => 'thumbnail', 'size' => 'mycravings_thumb'), $key);
+				break;
+			
+			case 'facebook_excerpt':
+				$ret = $this->get_facebook_excerpt();
 				break;
 			
 			default:
