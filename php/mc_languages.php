@@ -49,6 +49,7 @@ function mc_translate($str)
 			'Written By' => 'Par',
 			'OTHER POSTS' => 'AUTRES ARTICLES',
 			'Posts' => 'Articles',
+			'Follow us on:' => 'Suivez nous sur:',
 		);
 	}
 	if(array_key_exists($str, $mc_translation_array))

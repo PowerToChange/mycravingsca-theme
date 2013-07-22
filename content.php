@@ -49,7 +49,9 @@
 			<footer class="entry-meta tk-nimbus-sans">
 				<?php if ( is_single() ) { the_tags( '<p>Tags: ', ', ', '</p>'); } ?>
 			</footer><!-- .entry-meta -->
-			<?php if ( is_single() ) { comments_template( '', true ); } ?>
+			<?php if ( is_single() ) {
+				 include_once('social-share-this-article.php');
+				 comments_template( '', true ); } ?>
 		</div>
 	</article><!-- #post -->
 	</div>

@@ -37,6 +37,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+<?php include_once('facebook-body-start-scripts.php'); ?>
 <div id="head_wrapper" class="site">
 	<header id="masthead" class="site-header" role="banner">
 		<div id="logowrapper"></div>
