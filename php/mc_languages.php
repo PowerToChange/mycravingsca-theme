@@ -24,6 +24,7 @@ function mc_lng()
 	}
 	return $the_mc_lng; 
 }
+function _mc_lng() { echo mc_lng(); }
 function mc_fr() { return mc_lng() == 'fr'; }
 function mc_en() { return mc_lng() == 'en'; }
 
@@ -33,6 +34,8 @@ function mc_t($str)
 	if(mc_fr()) $res = mc_translate($str);
 	return $res;
 }
+
+function _mc_t($str){echo mc_t($str);}
 
 function mc_translate($str)
 {
@@ -50,6 +53,7 @@ function mc_translate($str)
 			'OTHER POSTS' => 'AUTRES ARTICLES',
 			'Posts' => 'Articles',
 			'Follow us on:' => 'Suivez nous sur:',
+			'Share this:' => 'Partager sur:',
 		);
 	}
 	if(array_key_exists($str, $mc_translation_array))
