@@ -50,7 +50,9 @@
 				<?php if ( is_single() ) { the_tags( '<p>Tags: ', ', ', '</p>'); } ?>
 			</footer><!-- .entry-meta -->
 			<?php if ( is_single() ) {
+				
 				 include_once('social-share-this-article.php');
+				 include_once('article-list-related.php');
 				 comments_template( '', true ); } ?>
 		</div>
 	</article><!-- #post -->

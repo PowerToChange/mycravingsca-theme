@@ -54,6 +54,7 @@ function mc_translate($str)
 			'Posts' => 'Articles',
 			'Follow us on:' => 'Suivez nous sur:',
 			'Share this:' => 'Partager sur:',
+			'Related Posts' => 'Articles similaires',
 		);
 	}
 	if(array_key_exists($str, $mc_translation_array))
