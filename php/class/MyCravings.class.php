@@ -9,6 +9,39 @@ class MyCravings
 	}
 	
 	
+	function show_launch_page() {
+		$launch_page = $this->collect_launch_articles();
+		mc_use_template_part_with_data('index-front-article.php', $front_page['front']);
+	
+		$data = array(
+			'box_title' => mc_t('Featured Posts'),
+			'box_placement' => '',
+			'box_key' => 'featured',
+			'front_page' => $launch_page,
+		);
+	  mc_use_template_part_with_data ('index-featured-box.php', $data);
+	
+		$data = array('front_page' => $launch_page);
+	  echo "<div class=\"clear\"></div>";
+	
+	  mc_use_template_part_with_data ('articles_slide.js.php', $data);
+	  mc_use_template_part_with_data ('index-featured-mobile-tablet.php', $data);
+	
+	  mc_use_template_part_with_data ('index-other-articles.php', $data);
+	}
+	
+	function & collect_launch_articles() {
+	  $launch_page = array('printed_ids' => array());
+	
+	  $items = wp_get_nav_menu_items('Launch');
+	
+	  $this->collect_featured($items, $launch_page);
+	  $this->collect_others($launch_page);
+	
+	  return $launch_page;
+	}
+	
+	
 	function show_front_page() {
 	  global $is_the_front_page;
 	  $is_the_front_page = true;
@@ -19,7 +52,7 @@ class MyCravings
 	
 		$data = array(
 			'box_title' => mc_t('Featured Posts'),
-			'box_placement' => 'left',
+			'box_placement' => 'half left',
 			'box_key' => 'featured',
 			'front_page' => $front_page,
 		);
@@ -27,7 +60,7 @@ class MyCravings
 	
 		$data = array(
 			'box_title' => mc_t('Recent Posts'),
-			'box_placement' => 'right',
+			'box_placement' => 'half right',
 			'box_key' => 'recent',
 			'front_page' => $front_page,
 		);
@@ -111,6 +144,26 @@ class MyCravings
 	  wp_reset_postdata();
 	}
 
+	function collect_others(&$front_page) {
+	  $query = new WP_Query('posts_per_page=-1');
+	  $nb_featured = count($front_page['featured']);
+	  $nb_recent = 0;
+	
+	  $front_page['others'] = array();
+	
+	  // The Loop
+	  while ($query -> have_posts()) :
+	    $query -> the_post();
+	    $id = get_the_ID();
+	    // if we did not already print it and if it should not be hidden
+	    if (!array_key_exists($id, $front_page['printed_ids']) && !get_post_meta($id, 'hide_from_front_page', true)) {	
+        // make it part of others
+        $front_page['others'][] = mc_get_data_for('article-listed-no-excerpt.php');
+	    }
+	  endwhile;
+	  wp_reset_postdata();
+	}
+
 	function facebook_head_stuff() {
 	  if (have_posts()) {
 	    the_post();
@@ -125,6 +178,10 @@ class MyCravings
 	";
 			rewind_posts();
 	  }
+	}
+	
+	function main_menu() {
+		wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) );
 	}
 
 }

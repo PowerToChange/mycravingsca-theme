@@ -38,7 +38,8 @@ function mc_get_data_for($filename, $id = NULL)
 
 function mc_use_template_part($filename, $id = NULL)
 {
-	extract(mc_load(mc_data_required($filename), $id));
+	$data = mc_load(mc_data_required($filename), $id);
+	if(is_array($data)) extract($data);
 	require($filename);
 }
 

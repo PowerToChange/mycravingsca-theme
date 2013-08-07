@@ -260,8 +260,65 @@ input[type="color"] {
 /* Buttons */
 
 .menu-toggle {  height: 20px; text-align: right; }
-#menubar { position:absolute; bottom: 0; left: 0; background: black; color: white; padding-top: 3px; width: 100%; }
-#menubar-laptop { position:absolute; bottom: 0; left: 0; color: white; padding-top: 3px; width: 100%; }
+#menubar.mobile-tablet { position:absolute; z-index:1; top: 122px; left: 0; background: black; color: white; padding-top: 3px; width: 100%; }
+#menubar-laptop { position:absolute; bottom: 0; left: 0; color: white; width: 100%; }
+#head_wrapper { overflow: visible; }
+
+/* main menu styles */
+.menu {
+    width:100%;
+}
+#menubar-laptop .nav-menu > span {
+    display:inline-block;
+    margin:0 auto;
+}
+#menubar-laptop #nav {
+    display:inline;
+    text-align:left;
+    position:relative;
+    list-style-type:none;
+}
+#menubar-laptop #nav > li {
+    float:left;
+    padding:0 20px; 0 0;
+    position:relative;
+}
+#menubar-laptop #nav > li > a {
+    display:block;
+    position:relative;
+}
+#menubar-laptop #nav > li.selected  > a {
+    z-index:2;
+}
+#menubar-laptop #nav li div {
+    position:relative;
+}
+#menubar-laptop #nav li div div {
+    padding: 0;
+    margin:0;
+    position:absolute;
+    display:none;
+    top:-1px;
+    z-index:1;
+    background: black;
+}
+#menubar-laptop #nav li div ul {
+    padding-left:10px;
+    padding-right:10px;
+    position:relative;
+    width:170px;
+    float:left;
+    list-style-type:none;
+}
+#menubar-laptop #nav li div ul li {
+    margin:0;
+    padding:0;
+}
+#menubar-laptop #nav li ul ul li a {
+    display:block;
+}
+
+
 
 input[type="submit"],
 input[type="button"],
@@ -1320,6 +1377,18 @@ a.comment-edit-link:hover {
 .center {text-align: center; }
 .thumbslide { overflow:hidden; height: 140px; max-width: 100%; }
 
+.blogger {
+	border: 0px solid red;
+	float: left;
+	width: 32.68%;
+	margin: 0 0.48% 0.48% 0;
+	height: 70px;
+	overflow: hidden;
+}
+
+.blogger img { max-width: 100%; }
+
+
 /* thumbslide
 ----------------------------------------------- */
 
@@ -1503,6 +1572,12 @@ img#wpstats {
 	#menubar-laptop a {color: white; line-height: 35px; font-size: 16px; }
 	#menubar-laptop a:hover {color: white; }
 	#menubar-laptop li { float: left; padding: 0 20px 0 0; }
+	#menubar-laptop li ul li {
+	float: none;
+	background: black;
+	}
+
+
 
 	.author_presentation.tablet-laptop { padding: 10px; }
 

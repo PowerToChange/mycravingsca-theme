@@ -9,6 +9,11 @@ class MyCravingsEn extends MyCravings
 		parent::MyCravings();
 	}
 	
+	function main_menu()
+	{
+		mc_use_template_part('main-menu-en.php');
+	}
+	
 }
 
 ?>

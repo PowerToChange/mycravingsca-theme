@@ -8,11 +8,15 @@
  * @subpackage Twenty_Twelve
  * @since Twenty Twelve 1.0
  */
+global $launch_page;
 ?>
 
 	<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
 		<div id="secondary" class="widget-area box laptop" role="complementary">
 			<?php include('social-icons.php'); ?>
-			<?php dynamic_sidebar( 'sidebar-1' ); ?>
+			<?php 
+				if($launch_page) { dynamic_sidebar( 'launch_right'); }
+				else { dynamic_sidebar( 'sidebar-1' ); }
+			 ?>
 		</div><!-- #secondary -->
 	<?php endif; ?>

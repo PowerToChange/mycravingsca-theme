@@ -32,6 +32,7 @@
  <link href="<?php bloginfo('template_url'); ?>/css/ss-symbolicons-block/ss-symbolicons-block.css" rel="stylesheet" />
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script src="<?php bloginfo('template_url') ?>/js/more_articles.js"></script>
+<script src="<?php bloginfo('template_url') ?>/js/main_menu.js"></script>
 <?php include_once('head-include-typekit.php'); // include typekit requirements ?>
 <?php wp_head(); ?>
 </head>
@@ -46,12 +47,11 @@
 		<div id="menubar" class="mobile-tablet">
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<h3 class="menu-toggle"><span class="tk-nimbus-sans">menu</span>&nbsp;<span class="entypo">&darr;</span>&nbsp;&nbsp;</h3>
-			<?php $html_menu = wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu', 'echo' => '0' ) ); ?>
-			<span class="tk-abril-dsplay mobile-tablet"><em><?php echo $html_menu; ?></em></span>
+			<span class="tk-abril-dsplay mobile-tablet"><em><?php mc_main_menu(); ?></em></span>
 		</nav><!-- #site-navigation -->
 		</div>
 		<div id="menubar-laptop" class="laptop">
-			<?php echo $html_menu; ?>
+			<?php mc_main_menu(); ?>
 		</div>
 		<?php $header_image = get_header_image();
 		if ( ! empty( $header_image ) ) : ?>

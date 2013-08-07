@@ -109,6 +109,8 @@ class MyCravingsPostLoader extends WordpressPostLoader
 		}
 		return $ret;
 	}
+	
+	
 		
 }
 
