@@ -29,6 +29,7 @@
   <link rel="shortcut icon" type="image/x-icon" href="<?php bloginfo('template_url'); ?>/images/favicon.ico" />
  <link href="<?php bloginfo('template_url'); ?>/css/fonts.css" rel="stylesheet" />
  <link href="<?php bloginfo('template_url'); ?>/css/idangerous.swiper.css" rel="stylesheet" />
+ <link href="<?php bloginfo('template_url'); ?>/css/slides.css" rel="stylesheet" />
  <link href="<?php bloginfo('template_url'); ?>/css/social-circle/ss-social-circle.css" rel="stylesheet" />
  <link href="<?php bloginfo('template_url'); ?>/css/ss-symbolicons-block/ss-symbolicons-block.css" rel="stylesheet" />
 <script src="http://code.jquery.com/jquery-latest.js"></script>

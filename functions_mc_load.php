@@ -24,6 +24,10 @@ function mc_data_required($filename)
 			$ret = array('id', 'url', 'cropped_title', 'thumbnail_thumb');
 			break;
 		
+		case 'article-list-slide.php':
+			$ret = array('id', 'url', 'cropped_title', 'thumbnail_thumb');
+			break;
+		
 		default:
 			
 			break;

@@ -8,6 +8,7 @@ if($front_page)
 			else
 				$fas = $front_page['featured'];
 ?>
+<!--
 <div id="ts_wrapper" class="box pad mobile-tablet">
 	<ul class="featured-articles">
 <?php
@@ -17,17 +18,22 @@ foreach ($fas as $fa) {
 ?>
 	</ul>
 </div>
-  <div class="device">
+-->
+  <div class="device mobile-tablet">
     <a class="arrow-left" href="#"></a> 
     <a class="arrow-right" href="#"></a>
-    <div class="swiper-container">
-      <div class="swiper-wrapper">
+	  <div class="swiper-container">
+	    <div class="swiper-wrapper">
+
+
+
+
 <?php
-foreach ($fas as $fa) {
+if(true) foreach ($fas as $fa) {
 	?>
         <div class="swiper-slide">
           <div class="content-slide">
-	<?php mc_use_template_part_with_data('article-listed-with-excerpt.php', $fa);	?>
+	<?php mc_use_template_part_with_data('article-list-slide.php', $fa);	?>
           </div>
         </div>
 <?php
@@ -41,18 +47,19 @@ foreach ($fas as $fa) {
   <script>
   var mySwiper = new Swiper('.swiper-container',{
     pagination: '.pagination',
-    loop:true,
-    grabCursor: true,
-    paginationClickable: true
+    paginationClickable: true,
+    loop: true,
+    centeredSlides: true,
+    slidesPerView: 5
   })
-  $('.arrow-left').on('click', function(e){
-    e.preventDefault()
-    mySwiper.swipePrev()
-  })
-  $('.arrow-right').on('click', function(e){
-    e.preventDefault()
-    mySwiper.swipeNext()
-  })
+//  $('.arrow-left').on('click', function(e){
+//    e.preventDefault()
+//    mySwiper.swipePrev()
+//  })
+//  $('.arrow-right').on('click', function(e){
+//    e.preventDefault()
+//    mySwiper.swipeNext()
+//  })
   </script>
 <?php
 		}
