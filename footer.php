@@ -26,6 +26,10 @@
 </div><!-- #large_footer -->
 <?php wp_footer(); ?>
 
+  <script src="<?php bloginfo('template_url') ?>/js/idangerous.swiper-2.0.min.js"></script>
+  <script src="<?php bloginfo('template_url') ?>/js/initialize_swiper.js"></script>
+
+
 <!-- optional .js for legacy browser support -->
 <script src="<?php bloginfo('template_url') ?>/css/social-circle/ss-social.js"></script>
 

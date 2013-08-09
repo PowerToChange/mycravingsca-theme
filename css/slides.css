@@ -6,6 +6,7 @@
 .swiper-container {
 	position: relative;
   width: 100%;
+  max-width: 719px;
   background: #000;
   height: 150px;
   color: #fff;
