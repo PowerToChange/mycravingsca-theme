@@ -1386,6 +1386,14 @@ a.comment-edit-link:hover {
 	overflow: hidden;
 }
 
+.blogger-swiper-container {
+	margin-top: 2em;
+}
+
+.blogger-slide .article_slide {
+	overflow: hidden;
+}
+
 .blogger img { max-width: 100%; }
 
 

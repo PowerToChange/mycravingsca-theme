@@ -13,6 +13,12 @@ define('MYCRAVINGS_TEMPLATE_DIR', dirname(__FILE__));
  * 	 php/class/MyCravings.class.php for general functions
  * */
 
+function is_launch_page()
+{
+	global $launch_page;
+	return $launch_page;
+}
+ 
 function show_front_page()
 {
 	global $mycravings;

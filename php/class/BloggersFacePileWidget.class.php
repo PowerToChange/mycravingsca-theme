@@ -85,7 +85,8 @@ class Blogger_Facepile_Widget extends WP_Widget {
 	
 	function bloggers_face_pile($bloggers)
 	{
-//		$bloggers = get_users();
+		global $mycravings_bloggers;
+		$mycravings_bloggers = $bloggers;
 		foreach ($bloggers as $blogger) {
 			echo "<div class=\"blogger\">";
 			$this->image_author($blogger);
