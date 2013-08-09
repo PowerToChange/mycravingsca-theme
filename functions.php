@@ -76,7 +76,7 @@ function twentytwelve_setup() {
 	// This theme uses a custom image size for featured images, displayed on "standard" posts.
 	add_theme_support( 'post-thumbnails' );
 	add_image_size('mycravings_thumb', 80, 60, true);
-	add_image_size('mycravings_mobilethumb', MOBILETHUMB_WIDTH, 120, true);
+	add_image_size('mycravings_mobilethumb', 180, 120, true);
 	add_image_size('mycravings_full', 676, 444, true);
 	set_post_thumbnail_size( 624, 9999 ); // Unlimited height, soft crop
 }

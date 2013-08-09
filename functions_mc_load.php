@@ -17,7 +17,7 @@ function mc_data_required($filename)
 			break;
 		
 		case 'article-listed-with-excerpt.php':
-			$ret = array('id', 'url', 'cropped_title', 'excerpt', 'is_video', 'thumbnail_thumb');
+			$ret = array('id', 'url', 'cropped_title', 'excerpt', 'is_video', 'thumbnail_thumb', 'thumbnail_mobilethumb');
 			break;
 		
 		case 'article-listed-no-excerpt.php':
@@ -25,7 +25,7 @@ function mc_data_required($filename)
 			break;
 		
 		case 'article-list-slide.php':
-			$ret = array('id', 'url', 'cropped_title', 'thumbnail_thumb');
+			$ret = array('id', 'url', 'cropped_title', 'thumbnail_mobilethumb');
 			break;
 		
 		default:

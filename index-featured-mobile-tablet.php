@@ -19,7 +19,7 @@ foreach ($fas as $fa) {
 	</ul>
 </div>
 -->
-  <div class="device mobile-tablet">
+  <div class="swiping-device mobile-tablet">
     <a class="arrow-left" href="#"></a> 
     <a class="arrow-right" href="#"></a>
 	  <div class="swiper-container">
@@ -50,7 +50,7 @@ if(true) foreach ($fas as $fa) {
     paginationClickable: true,
     loop: true,
     centeredSlides: true,
-    slidesPerView: 5
+    slidesPerView: 4
   })
 //  $('.arrow-left').on('click', function(e){
 //    e.preventDefault()

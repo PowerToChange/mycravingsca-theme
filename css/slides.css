@@ -1,7 +1,13 @@
+
+.swiping-device {
+	position: relative;
+	
+}
 .swiper-container {
-  width: 660px;
+	position: relative;
+  width: 100%;
   background: #000;
-  height: 250px;
+  height: 150px;
   color: #fff;
   text-align: center;
 }

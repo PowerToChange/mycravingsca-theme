@@ -65,6 +65,10 @@ class MyCravingsPostLoader extends WordpressPostLoader
 				$ret = $this->get_from_array(array('type' => 'thumbnail', 'size' => 'mycravings_thumb'), $key);
 				break;
 			
+			case 'thumbnail_mobilethumb':
+				$ret = $this->get_from_array(array('type' => 'thumbnail', 'size' => 'mycravings_mobilethumb'), $key);
+				break;
+			
 			case 'facebook_excerpt':
 				$ret = $this->get_facebook_excerpt();
 				break;

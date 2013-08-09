@@ -32,6 +32,7 @@
  <link href="<?php bloginfo('template_url'); ?>/css/slides.css" rel="stylesheet" />
  <link href="<?php bloginfo('template_url'); ?>/css/social-circle/ss-social-circle.css" rel="stylesheet" />
  <link href="<?php bloginfo('template_url'); ?>/css/ss-symbolicons-block/ss-symbolicons-block.css" rel="stylesheet" />
+ <link href="<?php bloginfo('template_url'); ?>/css/mycravings.css" rel="stylesheet" />
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script src="<?php bloginfo('template_url') ?>/js/more_articles.js"></script>
 <script src="<?php bloginfo('template_url') ?>/js/main_menu.js"></script>
