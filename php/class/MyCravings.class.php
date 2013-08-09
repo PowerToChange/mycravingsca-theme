@@ -27,7 +27,6 @@ class MyCravings
 	  mc_use_template_part_with_data ('articles_slide.js.php', $data);
 	  mc_use_template_part_with_data ('index-featured-mobile-tablet.php', $data);
 	
-	  mc_use_template_part_with_data ('index-other-articles.php', $data);
 	}
 	
 	function & collect_launch_articles() {
@@ -36,7 +35,6 @@ class MyCravings
 	  $items = wp_get_nav_menu_items('Launch');
 	
 	  $this->collect_featured($items, $launch_page);
-	  $this->collect_others($launch_page);
 	
 	  return $launch_page;
 	}
