@@ -2,9 +2,10 @@
 	<div class="transparent-black-box"></div>
 	<div class="inside-content">
 		<?php 
-		if(is_front_page() || is_launch_page()) { ?>
+		if(is_front_page()) { ?>
 			<span id="other-posts-button" class="tk-nimbus-sans"><?php echo mc_t('OTHER POSTS'); ?> &rarr;</span>
 		<?php 
+		}
 			global $mycravings_bloggers;
 			if(is_array($mycravings_bloggers))
 			{
@@ -36,7 +37,6 @@ foreach ($mycravings_bloggers as $author_id) {
   </div>
 				<?php
 			}
-		} //if(is_front_page())
 		
 		 ?>
 		<div class="social-icons"><?php include('social-icons.php'); ?></div>
