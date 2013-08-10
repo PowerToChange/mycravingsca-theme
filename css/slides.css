@@ -3,7 +3,7 @@
 	position: relative;
 	
 }
-.swiper-container {
+.swiper-container, .blogger-swiper-container {
 	position: relative;
   width: 100%;
   max-width: 719px;
