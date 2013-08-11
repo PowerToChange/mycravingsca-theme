@@ -59,7 +59,7 @@ function resize_swipers()
   });
 	
   $('.blogger-swiper-container').each(function(){
-  	$(this).css({'height': bl_height+'px', 'font-size': (bl_height/180) + 'em' });
+  	$(this).css({'width': swiper_width+'px', 'height': bl_height+'px', 'font-size': (bl_height/180) + 'em' });
   	$('.blogger-swiper-container .article_slide').css({'height': bl_height+'px', 'width': bl_height+ 'px' });
   });
 	
