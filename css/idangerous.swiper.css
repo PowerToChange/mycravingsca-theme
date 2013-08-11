@@ -16,7 +16,7 @@
 /* ===============================================================
 Basic Swiper Styles 
 ================================================================*/
-.swiper-container {
+.swiper-container, .blogger-swiper-container {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
