@@ -22,6 +22,11 @@
   -o-transition: 300ms;
   transition: 300ms;
 }
+
+.swiper-slide img {
+	width: 100%;
+}
+
 .swiper-slide-active {
   opacity: 1;
 }

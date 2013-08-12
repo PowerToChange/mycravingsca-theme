@@ -10,6 +10,7 @@
 			if(is_array($mycravings_bloggers))
 			{
 				?>
+	<span class="tk-nimbus-sans"><?php echo mc_t('OUR BLOGGERS'); ?></span>
   <div class="swiping-device mobile-tablet">
     <a class="arrow-left" href="#"></a> 
     <a class="arrow-right" href="#"></a>
