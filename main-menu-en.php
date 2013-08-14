@@ -3,7 +3,7 @@
             <ul id="nav" class="nav-menu">
                 <li><a href="<?php bloginfo('url'); ?>">Home</a></li>
                 <li><a href="<?php bloginfo('url'); ?>/about-us/">About Us</a></li>
-                <li><a href="#">Cravings</a>
+                <!--<li><a href="#">Cravings</a>
                     <div class="subs">
                         <div>
                             <ul>
@@ -27,7 +27,7 @@
                         </div>
                     </div>
                 </li>
-                <li><a href="<?php bloginfo('url'); ?>/video/">Videos</a></li>
+                <li><a href="<?php bloginfo('url'); ?>/video/">Videos</a></li>-->
             </ul>
         </span>
     </div>
