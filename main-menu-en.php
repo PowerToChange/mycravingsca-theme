@@ -3,7 +3,6 @@
             <ul id="nav" class="nav-menu">
                 <li><a href="<?php bloginfo('url'); ?>">Home</a></li>
                 <li><a href="<?php bloginfo('url'); ?>/about-us/">About Us</a></li>
-<?php if( is_user_logged_in()) { ?>
                 <li><a href="#">Cravings</a>
                     <div class="subs">
                         <div>
@@ -29,7 +28,6 @@
                     </div>
                 </li>
                 <li><a href="<?php bloginfo('url'); ?>/category/videos/">Videos</a></li>
-<?php } ?>
             </ul>
         </span>
     </div>
