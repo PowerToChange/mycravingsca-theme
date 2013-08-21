@@ -1,7 +1,7 @@
 <?php
 include_once ('WordpressPostLoader.class.php');
 
-define('MAX_TITLE_SIZE', 30);
+define('MAX_TITLE_SIZE', 40);
 define('FEATURED_EXCERPT_SIZE', 55);
 define('MOBILETHUMB_WIDTH', 180);
 
