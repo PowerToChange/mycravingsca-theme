@@ -1342,6 +1342,12 @@ a.comment-edit-link:hover {
 	text-align: right;
 }
 
+.bloggers_facepile_title {
+	font-size: 3.5em;
+	line-height: 1.25em;
+	text-align: center;
+}
+
 /*
  * Author page
  * */

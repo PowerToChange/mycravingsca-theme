@@ -87,6 +87,7 @@ class Blogger_Facepile_Widget extends WP_Widget {
 	{
 		global $mycravings_bloggers;
 		$mycravings_bloggers = $bloggers;
+		echo "<div class=\"bloggers_facepile_title tk-league-gothic\">OUR BLOGGERS</div>";
 		foreach ($bloggers as $blogger) {
 			echo "<div class=\"blogger\">";
 			$this->image_author($blogger);
