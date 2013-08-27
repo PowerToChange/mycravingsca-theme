@@ -10,14 +10,16 @@ $(document).ready(function() {
   swiper_nb_slides = get_swipers_nb_slides();  
 
   mySwiper = new Swiper('.swiper-container',{
-    loop: true,
+    loop: false,
     centeredSlides: true,
+    initialSlide: 2,
     slidesPerView: swiper_nb_slides
   });
   
   bloggerSwiper = new Swiper('.blogger-swiper-container',{
-    loop: true,
+    loop: false,
     centeredSlides: true,
+    initialSlide: 2,
     slidesPerView: 4
   });
   
