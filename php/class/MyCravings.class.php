@@ -96,7 +96,7 @@ class MyCravings
 	      $front_page['front'] = mc_get_data_for('index-front-article.php', $id);
 	    } else {
 	      // url was invalid, maybe next url is.
-	      collect_front($items, $front_page);
+	      //collect_front($items, $front_page);
 	    }
 	  }
 	}
@@ -181,6 +181,13 @@ class MyCravings
 	function main_menu() {
 		wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) );
 	}
+
+  function google_analytics_id()
+  {
+    return 'not-defined';
+  }
+  
+
 
 }
 

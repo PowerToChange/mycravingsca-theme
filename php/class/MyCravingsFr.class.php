@@ -8,7 +8,12 @@ class MyCravingsFr extends MyCravings
 	{
 		parent::MyCravings();
 	}
-	
+
+  function google_analytics_id()
+  {
+    return 'UA-2437988-27';
+  }
+  	
 }
 
 ?>

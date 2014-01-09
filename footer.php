@@ -45,7 +45,7 @@
   <script type="text/javascript">
 
   var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-2437988-36']);
+  _gaq.push(['_setAccount', '<?php echo google_analytics_id(); ?>']);
   _gaq.push(['_trackPageview']);
 
   (function() {

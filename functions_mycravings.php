@@ -45,6 +45,13 @@ function mc_main_menu() {
 	$mycravings->main_menu();	
 }
 
+function google_analytics_id()
+{
+  global $mycravings;
+  return $mycravings->google_analytics_id();
+}
+
+
 /**
  * Register our sidebars and widgetized areas.
  *

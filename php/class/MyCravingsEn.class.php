@@ -13,6 +13,11 @@ class MyCravingsEn extends MyCravings
 	{
 		mc_use_template_part('main-menu-en.php');
 	}
+  
+  function google_analytics_id()
+  {
+    return 'UA-2437988-36';
+  }
 	
 }
 
