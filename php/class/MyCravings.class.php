@@ -96,7 +96,7 @@ class MyCravings
 	      $front_page['front'] = mc_get_data_for('index-front-article.php', $id);
 	    } else {
 	      // url was invalid, maybe next url is.
-	      //collect_front($items, $front_page);
+	      $this->collect_front($items, $front_page);
 	    }
 	  }
 	}
