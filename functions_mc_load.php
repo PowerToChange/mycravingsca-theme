@@ -12,10 +12,14 @@ function mc_data_required($filename)
 {
 	$ret = NULL;
 	switch ($filename) {
-		case 'index-front-article.php':
-			$ret = array('url', 'title', 'thumbnail_full');
-			break;
-		
+    case 'index-front-article.php':
+      $ret = array('url', 'title', 'thumbnail_full', 'author_image', 'author', 'author_url');
+      break;
+    
+    case 'article-featured-image.php':
+      $ret = array('url', 'title', 'thumbnail_full', 'author_image', 'author', 'author_url');
+      break;
+    
 		case 'article-listed-with-excerpt.php':
 			$ret = array('id', 'url', 'cropped_title', 'excerpt', 'is_video', 'thumbnail_thumb', 'thumbnail_mobilethumb');
 			break;

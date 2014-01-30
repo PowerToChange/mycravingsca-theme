@@ -46,7 +46,7 @@ get_header(); ?>
 					<div class="wrap_author_picture">
 							<?php the_author_image(); ?>
 							<div class="front_article_title_black_box"></div>
-							<div class="front_article_title tk-league-gothic"><?php the_author(); ?></div>
+							<div class="front_article_title tk-league-gothic no_author"><?php the_author(); ?></div>
 					</div>
 					<p><?php the_author_meta( 'description' ); ?></p>
 				</div>
@@ -57,7 +57,7 @@ get_header(); ?>
 						<div class="wrap_author_picture">
 								<?php the_author_image(); ?>
 								<div class="front_article_title_black_box"></div>
-								<div class="front_article_title tk-league-gothic"><?php the_author(); ?></div>
+								<div class="front_article_title tk-league-gothic no_author"><?php the_author(); ?></div>
 						</div>
 					</div>
 					<p><?php the_author_meta( 'description' ); ?></p>
@@ -68,7 +68,7 @@ get_header(); ?>
 			<div class="box">
 				<div class="front_article">
 					<div class="front_article_title_black_box"></div>
-					<div class="front_article_title tk-league-gothic"><?php the_author(); ?></div>
+					<div class="front_article_title tk-league-gothic no_author"><?php the_author(); ?></div>
 					<?php echo $thumbnail_full; ?>
 				</div>
 			</div>

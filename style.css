@@ -1368,7 +1368,13 @@ a.comment-edit-link:hover {
 .front_article a {}
 .front_article img { width: 100%; margin: -15px 0;}
 .front_article_title_black_box { background: black; opacity: 0.8; position: absolute; bottom: 5px; left: 0; height: 65px; width: 85% }
-.front_article_title { text-transform: uppercase; color: white; font-size: 22pt; line-height: 65px; position: absolute; bottom: 5px; left: 0; margin-left: 10px;  }
+.front_article_title { text-transform: uppercase; color: white; font-size: 22pt; position: absolute; bottom: 5px; left: 0; margin-left: 10px;  }
+.front_article_title.with_image { left: 3em; }
+.front_article_title.no_author { line-height: 65px; }
+.front_article_title a { color: white; }
+.front_article_title .entry_author_image { height: 2.75em; width: 2.75em; border-radius: 50%; overflow: hidden; position: absolute; bottom: -0.22em; left: -3em; }
+.front_article_title .entry_author_image img { max-width: 100%; }
+.front_article_title .author {font-size: 0.75em; }
 
 .featured-articles li { height: 60px; margin: 0 0 10px 0; width: 100%; }
 .featured-articles li img { float: left; margin: 0 10px 0 0; }

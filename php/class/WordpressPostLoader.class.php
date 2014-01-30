@@ -93,10 +93,22 @@ class WordpressPostLoader
 						$ret = $this->get_thumbnail();
 						break;
 					
-					case 'thumbnail_url':
-						$ret = $this->get_thumbnail_url();
-						break;
-					
+          case 'thumbnail_url':
+            $ret = $this->get_thumbnail_url();
+            break;
+          
+          case 'author':
+            $ret = $this->get_author_meta('display_name');
+            break;
+          
+          case 'author_image':
+            $ret = $this->get_author_image();
+            break;
+          
+          case 'author_url':
+            $ret = $this->get_author_url();
+            break;
+          
 					default:
 						$ret = get_post_meta($this->get_id(), $key, true);
 						break;
@@ -207,6 +219,36 @@ class WordpressPostLoader
 		}
 		return $ret;
 	}
+  
+  function get_author_id()
+  {
+    return $this->post()->post_author;
+  }
+  
+  function get_author_meta($field)
+  {
+    $ret = NULL;
+    if($this->in_the_loop()) {
+      $ret = get_the_author_meta($field);
+    }
+    else {
+      $ret = get_the_author_meta($field, $this->get_author_id());
+    }
+    return $ret;
+  }
+  
+  function get_author_url()
+  {
+    return get_author_posts_url($this->get_author_id());
+  }
+  
+  /*
+   * Requires the sem-author-image plugin
+   * */
+  function get_author_image()
+  {
+    return author_image::get($this->get_author_id());
+  }
 	
 	/*################################################################
 	 #                                                                #
